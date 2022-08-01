@@ -1,0 +1,117 @@
+{
+  "sections": {
+    "1659363364023fad3a": {
+      "type": "dm-rich-text",
+      "blocks": {
+        "16593633645913b243-0": {
+          "type": "caption",
+          "settings": {
+            "caption": "caption"
+          }
+        },
+        "16593633645913b243-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Heading"
+          }
+        },
+        "16593633645913b243-2": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Subheading"
+          }
+        },
+        "16593633645913b243-3": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet, ex.<\/p>"
+          }
+        },
+        "16593633645913b243-4": {
+          "type": "button",
+          "settings": {
+            "button_text": "Button",
+            "button_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "16593633645913b243-0",
+        "16593633645913b243-1",
+        "16593633645913b243-2",
+        "16593633645913b243-3",
+        "16593633645913b243-4"
+      ],
+      "settings": {
+      }
+    },
+    "16593633749c26d32f": {
+      "type": "dm-collection-list",
+      "blocks": {
+        "1659363374e9d9f470-0": {
+          "type": "collection-content",
+          "settings": {
+            "image_url": "",
+            "heading": "Image Heading",
+            "description": "<p> lore ipusm <\/p>"
+          }
+        },
+        "1659363374e9d9f470-1": {
+          "type": "collection-content",
+          "settings": {
+            "image_url": "",
+            "heading": "Image Heading",
+            "description": "<p> lore ipusm <\/p>"
+          }
+        },
+        "1659363374e9d9f470-2": {
+          "type": "collection-content",
+          "settings": {
+            "image_url": "",
+            "heading": "Image Heading",
+            "description": "<p> lore ipusm <\/p>"
+          }
+        },
+        "1659363374e9d9f470-3": {
+          "type": "collection-content",
+          "settings": {
+            "image_url": "",
+            "heading": "Image Heading",
+            "description": "<p> lore ipusm <\/p>"
+          }
+        },
+        "1659363374e9d9f470-4": {
+          "type": "collection-content",
+          "settings": {
+            "image_url": "",
+            "heading": "Image Heading",
+            "description": "<p> lore ipusm <\/p>"
+          }
+        },
+        "1659363374e9d9f470-5": {
+          "type": "collection-content",
+          "settings": {
+            "image_url": "",
+            "heading": "Image Heading",
+            "description": "<p> lore ipusm <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1659363374e9d9f470-0",
+        "1659363374e9d9f470-1",
+        "1659363374e9d9f470-2",
+        "1659363374e9d9f470-3",
+        "1659363374e9d9f470-4",
+        "1659363374e9d9f470-5"
+      ],
+      "settings": {
+        "section_heading": "Shop the collection"
+      }
+    }
+  },
+  "order": [
+    "1659363364023fad3a",
+    "16593633749c26d32f"
+  ]
+}

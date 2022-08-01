@@ -1,0 +1,37 @@
+/* dm-collection-list start */
+
+.grid__item{
+
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px 0px;
+    
+
+}
+.custom-collection-list__card-info{
+ padding: 1.8rem;
+
+}
+
+.custom-collection-list__card-info p{
+margin: 6px 0 0 0;
+}
+
+.grid__item a{
+    text-decoration: none;
+    color: inherit;
+}
+
+@media only screen and (min-width:750px){
+    body{
+        font-size: 1.75rem;
+    }
+}
+
+/* dm-collection-list end */
+
+
+.custom-richtext__button{
+    margin-top: 2.5rem;
+}

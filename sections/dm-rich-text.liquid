@@ -1,0 +1,145 @@
+{% if section.blocks.size > 0 %}
+
+<div class="page-width center page-width--narrow custom-rich-text">
+    {% for block in section.blocks %}
+    {% case block.type %}
+    {% when 'caption' %}
+    {% if block.settings.caption != blank %}
+    <div class="custom-richtext__caption caption">
+        {{ block.settings.caption }}
+    </div>
+    {% endif %}
+    {% when 'heading' %}
+    {% if block.settings.heading != blank %}
+    <div class="custom-richtext__heading h2">
+        {{ block.settings.heading }}
+    </div>
+    {% endif %}
+    {% when 'subheading' %}
+    {% if block.settings.subheading != blank %}
+    <div class="custom-richtext__subheading subtitle">
+        {{ block.settings.subheading }}
+    </div>
+    {% endif %}
+    {% when 'paragraph' %}
+    {% if block.settings.paragraph != blank %}
+    <div class="custom-richtext__paragraph">
+        {{ block.settings.paragraph }}
+    </div>
+    {% endif %}
+    {% when 'button' %}
+    {% if block.settings.button_text != blank and block.settings.button_link != blank %}
+    <div class="custom-richtext__button">
+        <a href="{{ block.settings.button_link }}" class="button">{{ block.settings.button_text }}</a>
+    </div>
+    {% endif %}
+    {% else %}
+    {% endcase %}
+    {% endfor %}
+</div>
+{% endif %}
+
+{% schema %}
+{
+"name": "Rich text",
+"tag": "section",
+"class": "section",
+"max_blocks": 6,
+"settings": [
+{
+"type": "header",
+"content": "Customize this section using blocks "
+
+}
+],
+"blocks": [
+{
+"name": "Caption",
+"type": "caption",
+"settings": [
+
+{
+"type": "text",
+"id": "caption",
+"label": "Caption",
+"default": "caption"
+}]},
+{
+"name": "Heading",
+"type": "heading",
+"settings": [
+
+{
+"type": "text",
+"id": "heading",
+"label": "Heading",
+"default": "Heading"
+}]},
+{
+"name": "Subheading",
+"type": "subheading",
+"settings": [
+
+{
+"type": "text",
+"id": "subheading",
+"label": "Subheading",
+"default": "Subheading"
+}]},
+{
+"name": "Paragraph",
+"type": "paragraph",
+"settings": [
+
+{
+"type": "richtext",
+"id": "paragraph",
+"label": "Paragraph",
+"default": "<p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet, ex.</p>"
+}]},
+{
+"name": "Button",
+"type": "button",
+"settings": [
+
+{
+"type": "text",
+"id": "button_text",
+"label": "Button Text",
+"default": "Button"
+},
+{
+"type": "url",
+"id": "button_link",
+"label": "Button Link"
+
+}
+
+]}
+
+],
+"presets": [
+{
+"name": "Rich Text",
+"blocks": [
+{
+"type": "caption"
+},
+{
+"type": "heading"
+},
+{
+"type": "subheading"
+},
+{
+"type": "paragraph"
+},
+{
+"type": "button"
+}
+
+]
+}
+]
+}
+{% endschema %}
