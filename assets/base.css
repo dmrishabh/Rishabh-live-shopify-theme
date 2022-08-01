@@ -2171,11 +2171,13 @@ input[type='checkbox'] {
   width: 100%;
   padding: 1rem 2rem;
   text-decoration: none;
+  text-align: center;
+    color: #ffffff;
 }
 
 .announcement-bar__link:hover {
-  color: rgb(var(--color-foreground));
-  background-color: rgba(var(--color-card-hover), 0.06);
+  /* color: rgb(var(--color-foreground)); */
+  /* background-color: rgba(var(--color-card-hover), 0.06); */
 }
 
 .announcement-bar__link .icon-arrow {

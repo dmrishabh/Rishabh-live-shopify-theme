@@ -189,6 +189,15 @@
         "settings": {
           "color_scheme": "background-1"
         }
+      },
+      "dm-announcement-bar": {
+        "type": "dm-announcement-bar",
+        "settings": {
+          "announcement_check": true,
+          "announcement_text": "Smallbirds are back! Shop our best-selling kids shoes with even more styles and sizes.",
+          "announcement_link": "shopify:\/\/collections\/all",
+          "announcement_bar_color": "#046268"
+        }
       }
     },
     "content_for_index": [

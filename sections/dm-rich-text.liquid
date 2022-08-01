@@ -30,7 +30,7 @@
     {% when 'button' %}
     {% if block.settings.button_text != blank and block.settings.button_link != blank %}
     <div class="custom-richtext__button">
-        <a href="{{ block.settings.button_link }}" class="button">{{ block.settings.button_text }}</a>
+        <a href="{{ block.settings.button_link }}" class="uppercase button">{{ block.settings.button_text }}</a>
     </div>
     {% endif %}
     {% else %}

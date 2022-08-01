@@ -1,0 +1,69 @@
+{% style %}
+
+.announcement-bar-text-wrap{
+
+    background-color:{{section.settings.announcement_bar_color}};
+
+}
+    
+{% endstyle %}
+
+
+{% if section.settings.announcement_check %}
+
+<!-- container -->
+<div class="announcement-bar custom-announcement-bar color-{{ section.settings.announcement_bar_color }}">
+
+    <div class="announcement-bar-text-wrap">
+        {% if  section.settings.announcement_text  != blank and section.settings.announcement_link  != blank %}
+       
+        <a class="announcement-bar__link" href="{{ section.settings.announcement_link }}">{{ section.settings.announcement_text }}</a>
+            
+        {% endif %}
+
+    </div>
+
+
+
+</div>
+    
+{% endif %}
+
+{% schema %}
+{
+   "name": "custom-announcement-bar",
+  "settings": [
+ {
+    "type": "header",
+    "content": "Announcement Settings"
+ },
+{
+    "type": "checkbox",
+    "id": "announcement_check",
+    "label": "Show Announcement",
+    "default": true,
+    "info": "Uncheck To Hide Announcement Bar"
+},
+ {
+    "type": "text",
+    "id": "announcement_text",
+    "label": "Announcement Text",
+    "default": "Announcement"
+   
+ },
+{
+    "type": "url",
+    "id": "announcement_link",
+    "label": "Announcement Link"
+   
+},
+{
+    "type": "color",
+    "id": "announcement_bar_color",
+    "label": "Announcement Background Color",
+    "default": "#046268"
+}
+    
+  ]
+}
+{% endschema %}

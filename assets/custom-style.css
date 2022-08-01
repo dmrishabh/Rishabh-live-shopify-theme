@@ -28,10 +28,10 @@ margin: 6px 0 0 0;
         font-size: 1.75rem;
     }
 }
-
 /* dm-collection-list end */
 
-
+/* dm-richtext-list start*/
 .custom-richtext__button{
     margin-top: 2.5rem;
 }
+/* dm-richtext-list end*/
