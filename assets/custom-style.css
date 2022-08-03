@@ -140,6 +140,8 @@ line-height: 0;
 .overlay-heading{
   color: #fff;
 
+  margin-bottom: -10px;
+
 }
 .overlay-paragraph p{
     color: #fff;
