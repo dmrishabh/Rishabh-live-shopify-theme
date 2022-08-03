@@ -68,60 +68,6 @@
       "settings": {
       }
     },
-    "165945340907eb0ce2": {
-      "type": "dm-rich-text",
-      "blocks": {
-        "16594534096183f387-0": {
-          "type": "banner",
-          "settings": {
-            "banner": "shopify:\/\/shop_images\/image_4.png"
-          }
-        },
-        "16594534096183f387-1": {
-          "type": "caption",
-          "disabled": true,
-          "settings": {
-            "caption": "caption"
-          }
-        },
-        "16594534096183f387-2": {
-          "type": "heading",
-          "settings": {
-            "heading": "Let Your Feet Breathe"
-          }
-        },
-        "16594534096183f387-3": {
-          "type": "subheading",
-          "disabled": true,
-          "settings": {
-            "subheading": "Subheading"
-          }
-        },
-        "16594534096183f387-4": {
-          "type": "paragraph",
-          "settings": {
-            "paragraph": "<p>Easy Shop our cooling Tree material, perfect for rising temperatures.<\/p>"
-          }
-        },
-        "16594534096183f387-5": {
-          "type": "button",
-          "settings": {
-            "button_text": "SHOP NOW",
-            "button_link": "#"
-          }
-        }
-      },
-      "block_order": [
-        "16594534096183f387-0",
-        "16594534096183f387-1",
-        "16594534096183f387-2",
-        "16594534096183f387-3",
-        "16594534096183f387-4",
-        "16594534096183f387-5"
-      ],
-      "settings": {
-      }
-    },
     "16593633749c26d32f": {
       "type": "dm-collection-list",
       "blocks": {
@@ -192,6 +138,60 @@
         "section_heading": "Shop the collection"
       }
     },
+    "165945340907eb0ce2": {
+      "type": "dm-rich-text",
+      "blocks": {
+        "16594534096183f387-0": {
+          "type": "banner",
+          "settings": {
+            "banner": "shopify:\/\/shop_images\/image_4.png"
+          }
+        },
+        "16594534096183f387-1": {
+          "type": "caption",
+          "disabled": true,
+          "settings": {
+            "caption": "caption"
+          }
+        },
+        "16594534096183f387-2": {
+          "type": "heading",
+          "settings": {
+            "heading": "Let Your Feet Breathe"
+          }
+        },
+        "16594534096183f387-3": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Subheading"
+          }
+        },
+        "16594534096183f387-4": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Easy Shop our cooling Tree material, perfect for rising temperatures.<\/p>"
+          }
+        },
+        "16594534096183f387-5": {
+          "type": "button",
+          "settings": {
+            "button_text": "SHOP NOW",
+            "button_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "16594534096183f387-0",
+        "16594534096183f387-1",
+        "16594534096183f387-2",
+        "16594534096183f387-3",
+        "16594534096183f387-4",
+        "16594534096183f387-5"
+      ],
+      "settings": {
+      }
+    },
     "165945325881817411": {
       "type": "dm-rich-text",
       "blocks": {
@@ -246,6 +246,12 @@
       "settings": {
       }
     },
+    "165950373548896166": {
+      "type": "dm-blog-list",
+      "settings": {
+        "blog": "news"
+      }
+    },
     "1659453031d7ee291f": {
       "type": "dm-newsletter",
       "settings": {
@@ -256,20 +262,122 @@
         "caption": "<p>SIGN UPNote: You can opt-out at any time. See our <a href=\"https:\/\/www.allbirds.com\/pages\/privacy-policy\">Privacy Policy<\/a> and <a href=\"https:\/\/www.allbirds.com\/pages\/allbirds-terms-of-use\">Terms<\/a>.<\/p>"
       }
     },
-    "165950373548896166": {
-      "type": "dm-blog-list",
+    "1659503958711028a1": {
+      "type": "dm-image-with-text",
+      "blocks": {
+        "1659503958a8e2c225-0": {
+          "type": "caption",
+          "settings": {
+            "caption": "Caption",
+            "caption_color": "#000000",
+            "caption_color_mobile": "#000000"
+          }
+        },
+        "1659503958a8e2c225-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Heading",
+            "heading_color": "#000000",
+            "heading_color_mobile": "#000000"
+          }
+        },
+        "1659503958a8e2c225-2": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, voluptatem.<\/p>",
+            "paragraph_color": "#000000",
+            "paragraph_color_mobile": "#000000"
+          }
+        },
+        "1659503958a8e2c225-3": {
+          "type": "button",
+          "settings": {
+            "button_text": "Button",
+            "button_url": "",
+            "button_text_color": "#000000",
+            "button_text_color_mobile": "#000000",
+            "button_bg_color": "#000000",
+            "button_bg_color_mobile": "#000000",
+            "button_border_color": "#000000",
+            "button_border_color_mobile": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "1659503958a8e2c225-0",
+        "1659503958a8e2c225-1",
+        "1659503958a8e2c225-2",
+        "1659503958a8e2c225-3"
+      ],
       "settings": {
-        "blog": "news"
+        "image_url": "",
+        "image_alignment": "left",
+        "text_alignment": "left"
+      }
+    },
+    "1659503980ad35f57a": {
+      "type": "dm-image-with-text",
+      "blocks": {
+        "16595039801162b1f2-0": {
+          "type": "caption",
+          "settings": {
+            "caption": "Caption",
+            "caption_color": "#000000",
+            "caption_color_mobile": "#000000"
+          }
+        },
+        "16595039801162b1f2-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Heading",
+            "heading_color": "#000000",
+            "heading_color_mobile": "#000000"
+          }
+        },
+        "16595039801162b1f2-2": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, voluptatem.<\/p>",
+            "paragraph_color": "#000000",
+            "paragraph_color_mobile": "#000000"
+          }
+        },
+        "16595039801162b1f2-3": {
+          "type": "button",
+          "settings": {
+            "button_text": "Button",
+            "button_url": "",
+            "button_text_color": "#000000",
+            "button_text_color_mobile": "#000000",
+            "button_bg_color": "#000000",
+            "button_bg_color_mobile": "#000000",
+            "button_border_color": "#000000",
+            "button_border_color_mobile": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "16595039801162b1f2-0",
+        "16595039801162b1f2-1",
+        "16595039801162b1f2-2",
+        "16595039801162b1f2-3"
+      ],
+      "settings": {
+        "image_url": "",
+        "image_alignment": "right",
+        "text_alignment": "left"
       }
     }
   },
   "order": [
     "16594513993fd6576d",
     "165945312981440c1c",
-    "165945340907eb0ce2",
     "16593633749c26d32f",
+    "165945340907eb0ce2",
     "165945325881817411",
+    "165950373548896166",
     "1659453031d7ee291f",
-    "165950373548896166"
+    "1659503958711028a1",
+    "1659503980ad35f57a"
   ]
 }
