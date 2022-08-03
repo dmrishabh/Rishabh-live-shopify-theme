@@ -176,7 +176,7 @@ line-height: 0;
 
   display: flex;
   margin-top: 24px;
-  width: 384px;
+  width: 345px;
   justify-content: space-around;
   max-width: 100%;
   margin-bottom: 2.5rem;
@@ -365,4 +365,10 @@ width: 50%;
 
 .absolute{
   position: absolute;
+}
+
+/* blog */
+
+.blog-list_card--info{
+  padding: 1.8rem;
 }
