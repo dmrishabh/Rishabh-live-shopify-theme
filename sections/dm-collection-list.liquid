@@ -18,8 +18,14 @@
     {% for block in section.blocks %}
 
     <div class="grid__item">
+
       <!-- parent div -->
-      <a href="{{ block.settings.image_link }}" class="custom-collection-list__card">
+
+      <div class="custom-collection-list__card">
+
+      
+
+      <a href="{{ block.settings.image_link }}">
         {% if block.settings.image != blank %}
 
         <div class="media media--square">
@@ -64,6 +70,7 @@
 
         </a>
 
+      </div>
       </div>
 
     </div>

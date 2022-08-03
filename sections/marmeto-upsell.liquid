@@ -1,0 +1,51 @@
+{%- assign upsell_handles = '' -%}
+{%- for tag in product.tags -%}
+  {%- if tag contains 'upsell__' -%}
+	{%- assign u_handle = tag | split: '__' | last -%}
+	{%- assign upsell_handles = upsell_handles | append: u_handle | append: ',' -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign upsell_handles = upsell_handles | split: ',' | uniq -%}
+
+{%- if section.settings.enable_product_upselling and upsell_handles.size > 0 -%}
+  <div class="mm-upsell">
+	{%- if section.settings.title != blank -%}
+      <h2 class="mm-upsell__title">
+        {{ section.settings.title | escape }}
+      </h2>      
+    {%- endif -%}
+    
+    <div class="mm-upsell__products">
+      {%- for handle in upsell_handles -%}
+      	{%- assign product = all_products[handle] -%}
+      	{%- render 'marmeto-product-item', product: product -%}
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}
+
+
+{% schema %}
+  {
+    "name": "Upsell Section",
+	"tag": "section",
+    "settings": [
+	  {
+        "type": "paragraph",
+        "content": "Add upsell__{ product-handle } tag to your products to show the upsell items."
+      },
+	  {
+        "type": "checkbox",
+        "id": "enable_product_upselling",
+        "label": "Show upsell products",
+        "default": true
+      },	  
+	  {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Upsell Products"
+      }
+	]
+  }
+{% endschema %}

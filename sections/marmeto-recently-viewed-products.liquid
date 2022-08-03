@@ -1,0 +1,76 @@
+{%- capture section_settings -%}
+{
+  "productId": {{ product.id | json }}
+}
+{%- endcapture -%}
+
+<script src="{{ 'marmeto-recently-viewed-products.js' | asset_url }}" defer="defer"></script>
+
+<div 
+  data-section-id="{{ section.id }}" 
+  data-section-type="mm-recently-viewed-products" 
+  data-section-settings='{{ section_settings }}'
+>
+  <div class="mm-recentlyviewed">
+    {%- if section.settings.title != blank -%}
+      <h2 class="mm-recentlyviewed__title">
+        {{ section.settings.title | escape }}
+      </h2>      
+    {%- endif -%}
+  
+    <div class="mm-recentlyviewed__container">
+      {%- if template.name == 'search' -%}
+        <div class="mm-recentlyviewed__products">
+          {%- assign parsed_terms = search.terms | split: ' OR ' -%}
+          {%- for parsed_term in parsed_terms -%}
+            {%- assign id = parsed_term | split: 'id:' | last | times: 1 -%}
+
+            {%- for product in search.results -%}
+              {%- if product.id == id -%}        	  
+                {%- render 'marmeto-product-item', product: product -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+
+{%- comment -%} 
+  By default the section is hidden as we do not know if there are product yet
+{%- endcomment -%}
+{%- if template.name != 'search' or search.results_count == 0 -%}
+  <style>    
+    #shopify-section-{{ section.id }} {
+      display: none;
+    }
+  </style>
+{%- endif -%}
+
+
+{% schema %}
+  {
+    "name": "Recently viewed products",
+	"tag": "section",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Only be visible if at least one product has been viewed."
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Recently viewed"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Recently viewed products"
+      }
+    ]
+  }
+{% endschema %}

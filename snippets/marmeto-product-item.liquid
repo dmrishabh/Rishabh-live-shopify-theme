@@ -1,0 +1,63 @@
+<div class="mm-product-card">
+    <div class="mm-product-card__wrap">
+      {%- liquid
+        assign featured_media_aspect_ratio = product.featured_media.aspect_ratio
+  
+        if product.featured_media.aspect_ratio == nil
+          assign featured_media_aspect_ratio = 1
+        endif
+      -%}
+      
+      {%- if product.featured_media -%}
+        <a href="{{ product.url }}" 
+           class="mm-product-card__link"
+           style="padding-bottom: {{ 1 | divided_by: featured_media_aspect_ratio | times: 100 }}%;">
+           <img srcset="{%- if product.featured_media.width >= 165 -%}{{ product.featured_media | img_url: '165x' }} 165w,{%- endif -%}
+              {%- if product.featured_media.width >= 360 -%}{{ product.featured_media | img_url: '360x' }} 360w,{%- endif -%}
+              {%- if product.featured_media.width >= 533 -%}{{ product.featured_media | img_url: '533x' }} 533w,{%- endif -%}
+              {%- if product.featured_media.width >= 720 -%}{{ product.featured_media | img_url: '720x' }} 720w,{%- endif -%}
+              {%- if product.featured_media.width >= 940 -%}{{ product.featured_media | img_url: '940x' }} 940w,{%- endif -%}
+              {%- if product.featured_media.width >= 1066 -%}{{ product.featured_media | img_url: '1066x' }} 1066w{%- endif -%}"
+              src="{{ product.featured_media | img_url: '533x' }}"
+              sizes="(min-width: 1100px) 535px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+              alt="{{ product.featured_media.alt | default: product.title | escape }}"
+              loading="lazy"
+              class="mm-product-card__image"
+            >
+        </a>
+      {%- endif -%}
+      
+      <div class="mm-product-card__badges">
+        {%- if product.available == false -%}
+          <span class="mm-product-card__badge sold-out" aria-hidden="true">
+            Sold Out
+          </span>
+        {%- elsif product.compare_at_price > product.price and product.available -%}
+          <span class="mm-product-card__badge on-sale" aria-hidden="true">
+            On Sale
+          </span>
+        {%- endif -%}
+      </div>
+    </div>
+    
+    {%- liquid
+      assign current_variant = product.selected_or_first_available_variant
+      assign price = current_variant.price
+      assign compare_at_price = current_variant.compare_at_price    
+      assign available = current_variant.available | default: false
+    -%}
+    
+    <div class="mm-product-card__info">
+      <a href="{{ product.url }}" class="mm-product-card__title">
+        {{ product.title }}
+      </a>
+      
+      <div class="mm-product-card__prices">  
+        <span class="mm-product-card__price {% if compare_at_price > price %}on-sale{% endif %}">{{ price | money }}</span>      
+        
+        {%- if compare_at_price > price -%}
+            <span class="mm-product-card__compareprice">{{ compare_at_price | money }}</span>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>

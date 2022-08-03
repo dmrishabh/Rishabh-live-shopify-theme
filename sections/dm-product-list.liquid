@@ -1,0 +1,72 @@
+
+{% if  section.settings.collection !=  blank %}
+<div class="product-list page-width">
+    <div class="title-wrapper title-wrapper-with-link">
+{% if section.settings.section_heading != blank    %}
+    
+<div class="product-list__header h2">
+    {{ section.settings.section_heading }}
+</div>
+{% endif %}
+        {% if section.settings.show_view_all == true %}
+            <div class="link">
+                <a href="{{ section.settings.view_all_btn_link }}">View all</a>
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="grid grid--1-col grid--2-col-tablet grid--3-col-desktop" >
+        {%- for  product in section.settings.collection.products limit: section.settings.product_limit -%}
+        <div class="grid__item">
+        {%- render 'product-card', product: product -%}
+         </div>
+        {%- endfor -%}
+    </div>
+
+</div>
+
+{% endif %}
+{% schema %}
+{
+    "name":"Product list",
+    "class": "section",
+    "tag":"section",
+    "settings":[
+            {
+                "type":"text",
+                "id":"section_heading",
+                "label":"Heading"
+            },
+            {
+                "type": "checkbox",
+                "id": "show_view_all",
+                "label": "Show view all Button",
+                "default": false
+            },
+           {
+            "type": "url",
+            "id": "view_all_btn_link",
+            "label": "View All Button Link"
+           },
+            {
+                "type": "collection",
+                "id": "collection",
+                "label": "Choose collection"
+            },
+            {
+                "type": "range",
+                "id": "product_limit",
+                "label": "Product limit",
+                "min": 4,
+                "max": 12,
+                "step": 1,
+                "default": 4
+            }
+    ],
+    "presets":[
+    {
+        "name":"Product list"
+    }
+    ]
+}
+{% endschema %}

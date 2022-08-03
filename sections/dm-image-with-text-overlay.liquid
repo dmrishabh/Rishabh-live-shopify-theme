@@ -1,9 +1,11 @@
 
 <div class="isolate">
 
-    {% if section.settings.image != blank %}
+    {% if section.settings.image != blank  %}
     <div class="no-l-height">
-            {% render 'lazy-image', src: section.settings.image, width: "large", class:"dm-custom-image--image" %}
+    
+            {% render 'lazy-image', src: section.settings.image, width: "large", class:"dm-custom-image--image small-hide" %}
+            {% render 'lazy-image', src: section.settings.image_mobile, width: "large", class:"medium-hide large-up-hide dm-custom-image--image" %}
     </div>
     {% else %}
     {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
@@ -51,6 +53,22 @@
 
 </div>
 
+{% if section.settings.notify_check %}
+    
+<div class="notify-bar center">
+
+
+  {% if section.settings.notify_text != blank %}
+
+  <div>
+
+      {{ section.settings.notify_text | replace: '<a', '<a class="link"' }}
+
+  </div>
+  {% endif %}
+  {% endif %}
+</div>
+
 
 </div>
 
@@ -73,6 +91,12 @@
 "id": "image",
 "label": "Image",
 "info": "600 * 1080 recommended"
+},
+{
+"type": "image_picker",
+"id": "image_mobile",
+"label": "Image ( Mobile )",
+"info": "600 * 400 recommended"
 },
 {
 "type": "header",

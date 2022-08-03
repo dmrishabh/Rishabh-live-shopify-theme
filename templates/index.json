@@ -4,6 +4,7 @@
       "type": "dm-image-with-text-overlay",
       "settings": {
         "image": "shopify:\/\/shop_images\/image_3.png",
+        "image_mobile": "shopify:\/\/shop_images\/image_10.png",
         "heading": "Bold Color. Big Comfort.",
         "paragraph": "<p><strong>Supercharge your summer with new limited edition hues.<\/strong><\/p>",
         "button_text": "SHOP MEN",
@@ -11,7 +12,7 @@
         "button_text_2": "SHOP WOMEN",
         "button_url_2": "#",
         "notify_check": true,
-        "notify_text": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, molestias!<\/p>"
+        "notify_text": "<p><strong>Discover Your Perfect Pair <\/strong> Try our Style Quiz to find the best pair for you.  <a href=\"#\" title=\"#\">Take the Style Quiz<\/a><\/p>"
       }
     },
     "165945312981440c1c": {
@@ -76,8 +77,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/7B9A6626.jpg",
             "image_url": "shopify:\/\/collections\/all",
-            "heading": "Image Heading",
-            "description": "<p> lore ipusm <\/p>"
+            "heading": "Shoes For Summer",
+            "description": "<p>Light, breezy, and made with planet-friendly eucalyptus, these favorites will keep you cool when the sun is shining.<\/p>"
           }
         },
         "1659363374e9d9f470-1": {
@@ -85,8 +86,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/New-Arrivals-Tile.jpg",
             "image_url": "shopify:\/\/collections",
-            "heading": "Image Heading",
-            "description": "<p> lore ipusm <\/p>"
+            "heading": "New Arrivals",
+            "description": "<p>The latest styles and limited edition colors that you can only find here (while they last, that is).<\/p>"
           }
         },
         "1659363374e9d9f470-2": {
@@ -94,8 +95,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Story-Carousel.jpg",
             "image_url": "shopify:\/\/collections",
-            "heading": "Image Heading",
-            "description": "<p> lore ipusm <\/p>"
+            "heading": "Smallbirds For Kids",
+            "description": "<p>We took a shrink ray to two of our most-loved styles to create the perfect pair for kiddos size 5T-3Y. Machine washable. Easy to slip on and off. Oh and they play nice with the planet.<\/p>"
           }
         },
         "1659363374e9d9f470-3": {
@@ -103,8 +104,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Basic-Bundle-Story-Carousel.jpg",
             "image_url": "",
-            "heading": "Image Heading",
-            "description": "<p> lore ipusm <\/p>"
+            "heading": "Bundle Your Basics",
+            "description": "<p>Save up to 30% when you bundle your favorite Trino® basics. <\/p>"
           }
         },
         "1659363374e9d9f470-4": {
@@ -112,8 +113,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/CollectionsCarousel.jpg",
             "image_url": "",
-            "heading": "Image Heading",
-            "description": "<p> lore ipusm <\/p>"
+            "heading": "The Sugar Series",
+            "description": "<p>The cushioned comfort of the Sugar Zeffers and Sugar Sliders will make prepping for summer that much sweeter.<\/p>"
           }
         },
         "1659363374e9d9f470-5": {
@@ -121,8 +122,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/22Q1-Dasher1-CollectionsCarousel.jpg",
             "image_url": "",
-            "heading": "Image Heading",
-            "description": "<p> lore ipusm <\/p>"
+            "heading": "The Running Shop",
+            "description": "<p>Break a sweat, not the planet in our running shoes, trail shoes, and performance apparel — all made with a mix of sustainable materials.<\/p>"
           }
         }
       },
@@ -160,7 +161,7 @@
         "1659503958a8e2c225-2": {
           "type": "paragraph",
           "settings": {
-            "paragraph": "<p>Using leftover stock yarns from our sampling process, we knit a special one-piece upper made from FSC Certified eucalyptus trees. The end result? A look that’s one-of-a-kind and unique to each shoe and perfect fit that’s flexible, breathable, and better for the planet.<\/p>",
+            "paragraph": "<p>Using leftover stock yarns from our sampling process, we knit a special one-piece upper made from FSC Certified eucalyptus trees. The end result? A look that’s one-of-a-kind and unique to each <\/p>",
             "paragraph_color": "#000000",
             "paragraph_color_mobile": "#000000"
           }
@@ -308,6 +309,16 @@
         "text_alignment": "right"
       }
     },
+    "16595213255df7457f": {
+      "type": "dm-product-list",
+      "settings": {
+        "section_heading": "Our handpicked choices",
+        "show_view_all": true,
+        "view_all_btn_link": "shopify:\/\/collections\/all",
+        "collection": "antique-collection",
+        "product_limit": 6
+      }
+    },
     "165945325881817411": {
       "type": "dm-rich-text",
       "blocks": {
@@ -381,6 +392,7 @@
     "165945340907eb0ce2",
     "165950373548896166",
     "1659503980ad35f57a",
+    "16595213255df7457f",
     "165945325881817411",
     "1659453031d7ee291f"
   ]

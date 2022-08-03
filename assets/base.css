@@ -552,12 +552,20 @@ table:not([class]) th {
   .small-hide {
     display: none !important;
   }
+   .button_group{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    max-width: 348px;
+
+   }
 }
 
 @media screen and (min-width: 750px) and (max-width: 989px) {
   .medium-hide {
     display: none !important;
   }
+
 }
 
 @media screen and (min-width: 990px) {

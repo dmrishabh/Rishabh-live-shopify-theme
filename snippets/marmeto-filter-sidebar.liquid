@@ -1,0 +1,80 @@
+<div id="sidebar-filter" class="filter-sidebar">
+    <div class="filter-sidebar__header">
+      <div class="filter-sidebar__title">Filters</div>
+      <div class="filter-sidebar__close" data-action="close-filter">Close X</div>
+    </div>
+    
+    <div class="filter-sidebar__content">    
+      {%- for filter in collection.filters -%}
+        {% case filter.type %}
+        {% when 'list' %}
+          <div class="filter-group and" data-tag="{{ filter.label | handleize | replace: '-', '' }}">
+            <button class="filter-group__heading js-accordion-heading">		  
+              <span class="heading--text">{{ filter.label | escape }}</span>
+              <span class="heading--icon"></span>
+            </button>
+            <div class="filter-group__content js-accordion-content">
+              <ul class="filter-group__list" role="list">
+                {%- for value in filter.values -%}
+                  <li class="filter-group__listitem filter-item or" data-tag="{{ value.label | handleize }}">
+                    <span class="filter-checkbox"></span>
+                    
+                    {%- if filter.label == 'Color' -%}
+                      <span class="filter-colorswatch" style="background: {{ value.label | handleize }};"></span>
+                    {%- endif -%}
+                    
+                    <span>{{ value.label | escape }}</span>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
+          </div>
+        {% when 'price_range' %}
+          <div class="filter-group and" data-tag="{{ filter.label | handleize | replace: '-', '' }}">
+            <button class="filter-group__heading js-accordion-heading">		  
+              <span class="heading--text">{{ filter.label | escape }}</span>
+              <span class="heading--icon"></span>
+            </button>
+            <div class="filter-group__content js-accordion-content">
+              <div class="filter-group__pricetext">
+                The highest price is {{ filter.range_max | money }}
+              </div>
+              <div class="filter-group__price">             
+                <div class="price-field">
+                  <span class="price-field__currency">{{ cart.currency.symbol }}</span>
+                  <input class="price-field__input"
+                    name="PriceFilterMin"
+                    id="Filter-{{ filter.label | escape }}-GTE"                                    
+                    type="number"
+                    value="0"
+                    placeholder="0"
+                    min="0"
+                    max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
+                  >
+                </div>  
+                <div>-</div>
+                <div class="price-field">
+                  <span class="price-field__currency">{{ cart.currency.symbol }}</span>
+                  <input class="price-field__input"
+                    name="PriceFilterMax"
+                    id="Filter-{{ filter.label | escape }}-LTE"
+                    type="number"
+                    value="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                    min="0"                  
+                    placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                    max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                  >
+                </div>
+              </div>
+            </div>
+            <input type="hidden" class="price-filter-item filter-item or" value="" data-tag="0-{{ filter.range_max | money_without_currency | replace: ',', '' }}" />
+          </div>
+        {% endcase %}
+      {%- endfor -%}
+    </div>
+    
+    <div class="filter-sidebar__footer">
+      <div class="filter-sidebar__button clear-all">Clear</div>
+      <div class="filter-sidebar__button" data-action="close-filter">Apply</div>
+    </div>
+  </div>
