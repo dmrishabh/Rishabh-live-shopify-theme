@@ -1,15 +1,39 @@
+/* dm global css */
+
+.dm-custom-banner-wrapper{
+    
+  position: relative;
+
+
+}
+.dm-custom-image--flex{
+height:100%;
+display: flex;
+
+}
+
+.dm-custom-image--image{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+  }
 /* dm-collection-list start */
 
 .grid__item{
 
-    text-decoration: none;
+    text-decoration: none;  
     display: block;
     color: inherit;
     box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px 0px;
     
 
 }
-.custom-collection-list__card-info{
+.custom-collection-list__card--info{
  padding: 1.8rem;
 
 }
@@ -34,4 +58,125 @@ margin: 6px 0 0 0;
 .custom-richtext__button{
     margin-top: 2.5rem;
 }
+  .custom-richtext__caption,.custom-richtext__heading{
+    margin-top: 20px;
+
+  }
 /* dm-richtext-list end*/
+
+/* image with text start */
+   
+    .image-text__textwrap{
+      padding: 30px 0 0;
+    }
+    .image-text__heading{
+      margin: 0;
+    }
+    
+    .image-text__paragraph{
+      margin-bottom: 25px;
+    }
+
+    .grid__item--line-height-0{
+line-height: 0;
+    }
+    .image-with-text--grid__item{
+        display: inline-flex;
+       
+        align-items: center;
+    }
+    
+    @media only screen and (min-width:750px) {
+    
+     
+      .image-text--right{
+        flex-direction: row-reverse;
+      }
+      .image-text__textwrap{ 
+      
+        padding: 0 50px;
+      }
+      .grid__item--line-height-0{
+        line-height: 0;
+            }
+      
+    }
+    
+/* image with text end */
+
+/* image with text overlay start */
+.text-overlay-flex{
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-end;
+  height: 100%;
+  align-items: flex-end;
+}
+
+.text-overlay-content-wrap{
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.notify-bar{
+  color: #fff;
+  background-color: #212a2f;
+  padding: 10px 5px
+}
+.notify-bar a{
+  color: #fff;
+}
+.notify-bar p{
+  margin-block-start: 0;
+  margin-block-end: 0;
+
+}
+.overlay-heading{
+  font-weight: 700;
+}
+.overlay-button{
+  color: #000;
+  background-color: #fff;
+}
+
+
+
+/* -----------NewsLetter starts--------- */
+.check-box__caption{
+  margin: 2rem 0;
+}
+.news-bg-color{
+  background-color: #F8F7F5;
+}
+.custom-newsletter{
+  padding: 2.5rem 0;
+}
+.newsletter{
+max-width: 60rem;
+
+}
+/* -----------NewsLetter ends--------- */
+/* ------------BLOG LIST start ------------- */
+
+.blog__excerpt{
+  /* margin: 10px 0; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  /* line-height: 1.3;
+  font-size: 12px; */
+}
+.blog__title{
+  margin: 0;
+  line-height: 1.32;
+}
+
+/* ------------BLOG LIST end------------- */
+
+

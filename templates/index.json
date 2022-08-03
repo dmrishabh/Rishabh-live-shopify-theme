@@ -1,5 +1,127 @@
 {
   "sections": {
+    "16594513993fd6576d": {
+      "type": "dm-image-with-text-overlay",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/image_3.png",
+        "heading": "Bold Color. Big Comfort.",
+        "paragraph": "<p><strong>Supercharge your summer with new limited edition hues.<\/strong><\/p>",
+        "button_text": "SHOP MEN",
+        "button_url": "shopify:\/\/collections\/all",
+        "button_text_2": "SHOP WOMEN",
+        "button_url_2": "#",
+        "notify_check": true,
+        "notify_text": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, molestias!<\/p>"
+      }
+    },
+    "165945312981440c1c": {
+      "type": "dm-rich-text",
+      "blocks": {
+        "1659453128f44e8a93-0": {
+          "type": "banner",
+          "settings": {
+            "banner": "shopify:\/\/shop_images\/image.png"
+          }
+        },
+        "1659453128f44e8a93-1": {
+          "type": "caption",
+          "disabled": true,
+          "settings": {
+            "caption": "caption"
+          }
+        },
+        "1659453128f44e8a93-2": {
+          "type": "heading",
+          "settings": {
+            "heading": "Big News For Little Feet"
+          }
+        },
+        "1659453128f44e8a93-3": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Subheading"
+          }
+        },
+        "1659453128f44e8a93-4": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Our best-selling kids shoes are back and cuter than ever with even more styles and sizes from 5T to 3Y.<\/p>"
+          }
+        },
+        "1659453128f44e8a93-5": {
+          "type": "button",
+          "settings": {
+            "button_text": "SHOP NOW",
+            "button_link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "1659453128f44e8a93-0",
+        "1659453128f44e8a93-1",
+        "1659453128f44e8a93-2",
+        "1659453128f44e8a93-3",
+        "1659453128f44e8a93-4",
+        "1659453128f44e8a93-5"
+      ],
+      "settings": {
+      }
+    },
+    "165945340907eb0ce2": {
+      "type": "dm-rich-text",
+      "blocks": {
+        "16594534096183f387-0": {
+          "type": "banner",
+          "settings": {
+            "banner": "shopify:\/\/shop_images\/image_4.png"
+          }
+        },
+        "16594534096183f387-1": {
+          "type": "caption",
+          "disabled": true,
+          "settings": {
+            "caption": "caption"
+          }
+        },
+        "16594534096183f387-2": {
+          "type": "heading",
+          "settings": {
+            "heading": "Let Your Feet Breathe"
+          }
+        },
+        "16594534096183f387-3": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Subheading"
+          }
+        },
+        "16594534096183f387-4": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Easy Shop our cooling Tree material, perfect for rising temperatures.<\/p>"
+          }
+        },
+        "16594534096183f387-5": {
+          "type": "button",
+          "settings": {
+            "button_text": "SHOP NOW",
+            "button_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "16594534096183f387-0",
+        "16594534096183f387-1",
+        "16594534096183f387-2",
+        "16594534096183f387-3",
+        "16594534096183f387-4",
+        "16594534096183f387-5"
+      ],
+      "settings": {
+      }
+    },
     "16593633749c26d32f": {
       "type": "dm-collection-list",
       "blocks": {
@@ -70,56 +192,84 @@
         "section_heading": "Shop the collection"
       }
     },
-    "1659363364023fad3a": {
+    "165945325881817411": {
       "type": "dm-rich-text",
       "blocks": {
-        "16593633645913b243-0": {
+        "165945325825a01f89-0": {
+          "type": "banner",
+          "settings": {
+            "banner": "shopify:\/\/shop_images\/image_1.png"
+          }
+        },
+        "165945325825a01f89-1": {
           "type": "caption",
           "disabled": true,
           "settings": {
             "caption": "caption"
           }
         },
-        "16593633645913b243-1": {
+        "165945325825a01f89-2": {
           "type": "heading",
           "settings": {
             "heading": "Can Sustainable Shoes Save The Planet ?"
           }
         },
-        "16593633645913b243-2": {
+        "165945325825a01f89-3": {
           "type": "subheading",
           "disabled": true,
           "settings": {
             "subheading": "Subheading"
           }
         },
-        "16593633645913b243-3": {
+        "165945325825a01f89-4": {
           "type": "paragraph",
           "settings": {
             "paragraph": "<p>We think it’s a good place to start. Explore our approach to sustainable footwear, sustainable apparel and reducing our environmental impact. Check out our progress so far, and our bold list of commitments for 2025.<\/p>"
           }
         },
-        "16593633645913b243-4": {
+        "165945325825a01f89-5": {
           "type": "button",
           "settings": {
-            "button_text": "Our Sustainable Practices",
-            "button_link": "shopify:\/\/collections"
+            "button_text": "OUR SUSTAINABLE PRACTICES",
+            "button_link": "shopify:\/\/collections\/all"
           }
         }
       },
       "block_order": [
-        "16593633645913b243-0",
-        "16593633645913b243-1",
-        "16593633645913b243-2",
-        "16593633645913b243-3",
-        "16593633645913b243-4"
+        "165945325825a01f89-0",
+        "165945325825a01f89-1",
+        "165945325825a01f89-2",
+        "165945325825a01f89-3",
+        "165945325825a01f89-4",
+        "165945325825a01f89-5"
       ],
       "settings": {
+      }
+    },
+    "1659453031d7ee291f": {
+      "type": "dm-newsletter",
+      "settings": {
+        "heading": "Want First Dibs?",
+        "paragraph": "<p>Join our email list and be the first to know about new limited edition products, material innovations, and lots of other fun updates.<\/p>",
+        "button_text": "Sign up",
+        "check_box": false,
+        "caption": "<p>SIGN UPNote: You can opt-out at any time. See our <a href=\"https:\/\/www.allbirds.com\/pages\/privacy-policy\">Privacy Policy<\/a> and <a href=\"https:\/\/www.allbirds.com\/pages\/allbirds-terms-of-use\">Terms<\/a>.<\/p>"
+      }
+    },
+    "165950373548896166": {
+      "type": "dm-blog-list",
+      "settings": {
+        "blog": "news"
       }
     }
   },
   "order": [
+    "16594513993fd6576d",
+    "165945312981440c1c",
+    "165945340907eb0ce2",
     "16593633749c26d32f",
-    "1659363364023fad3a"
+    "165945325881817411",
+    "1659453031d7ee291f",
+    "165950373548896166"
   ]
 }

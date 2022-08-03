@@ -1,0 +1,100 @@
+<div class="news-bg-color">
+    <div class="newsletter center page-width--narrow page-width">
+    <div class="newsletter__wrapper custom-newsletter">
+    
+        {% if section.settings.heading != blank %}
+        <span class="h1 uppercase center">
+            {{section.settings.heading}}
+        </span>
+        {% endif %}
+        {% if section.settings.paragraph != blank %}
+        <span class="newletter_paragraph newsletter__subheading">
+            {{section.settings.paragraph}}
+        </span>
+        {% endif %}
+    
+        <!-- form -->
+    
+        {% form 'customer', class: 'newsletter-form' %}
+                  <input class="field__input" type="hidden" name="contact[tags]" value="newsletter">
+                  <div class="newsletter-form__field-wrapper">
+                    <div class="field">
+                      <input
+                        id="NewsletterForm--{{ section.id }}"
+                        type="email"
+                        name="contact[email]"
+                        class="field__input"
+                        value="{{ form.email }}"
+                        placeholder="ENTER YOUR EMAIL ADDRESS"
+                        >
+                        <button type="submit" class="uppercase button" name="commit" id="Subscribe">
+                            {{ section.settings.button_text }}
+    
+                          </button>
+                    </div>
+                   
+                </div>
+                    
+    
+        {% endform %}
+    
+        {% if section.settings.check_box %}
+        <div class="check-box__caption caption">
+            {{ section.settings.caption | replace: '<a', '<a class="link"' }}
+        </div>
+    {% endif %}
+    
+    
+    </div>
+    </div>
+    </div>
+    
+    {% schema %}
+    {
+        "name": "Custom Newsletter",
+        "tag": "section",
+        "class": "section",
+        "settings":[
+        {
+            "type":"text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Subscribe to our emails"
+        },
+        {
+            "type":"richtext",
+            "id": "paragraph",
+            "label": "Paragraph",
+            "default" : "<p>Be the first to know about new collections and exclusive offers.</p>"
+        },
+        
+        {
+            "type":"text",
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "Sign up"
+        },
+        {
+            "type": "checkbox",
+            "id": "check_box",
+            "label": "Show Notification Bar",
+            "default": true,
+            "info": "Uncheck to hide Notifaction bar"
+        },
+        {
+            "type":"richtext",
+            "id": "caption",
+            "label": "Caption",
+            "default": "<p>Note:</p>"
+        }
+        ],
+        "presets":[
+        {
+            "name": "Custom Newsletter"
+        }
+        ]
+    }
+    
+    
+    
+    {% endschema %}

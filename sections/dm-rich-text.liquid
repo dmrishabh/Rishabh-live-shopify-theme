@@ -1,35 +1,54 @@
 {% if section.blocks.size > 0 %}
 
-<div class="page-width center page-width--narrow custom-rich-text">
+<div class="custom-rich-text">
     {% for block in section.blocks %}
     {% case block.type %}
+    {% when 'banner' %}
+
+    {% if block.settings.banner != blank %}
+
+    <div class="dm-custom-banner-wrapper">
+
+        <div class="dm-custom-image--flex">
+
+            {% render 'lazy-image', src: block.settings.banner, width: "large", class:"dm-custom-image--image" %}
+        
+
+    </div>
+
+    </div>
+
+    
+        
+    {% endif %}
+
     {% when 'caption' %}
     {% if block.settings.caption != blank %}
-    <div class="custom-richtext__caption caption">
+    <div class="custom-richtext__caption caption page-width center page-width--narrow">
         {{ block.settings.caption }}
     </div>
     {% endif %}
     {% when 'heading' %}
     {% if block.settings.heading != blank %}
-    <div class="custom-richtext__heading h2">
+    <div class="custom-richtext__heading h2 page-width center page-width--narrow">
         {{ block.settings.heading }}
     </div>
     {% endif %}
     {% when 'subheading' %}
     {% if block.settings.subheading != blank %}
-    <div class="custom-richtext__subheading subtitle">
+    <div class="custom-richtext__subheading subtitle page-width center page-width--narrow">
         {{ block.settings.subheading }}
     </div>
     {% endif %}
     {% when 'paragraph' %}
     {% if block.settings.paragraph != blank %}
-    <div class="custom-richtext__paragraph">
-        {{ block.settings.paragraph }}
+    <div class="custom-richtext__paragraph page-width center page-width--narrow">
+        {{ block.settings.paragraph  | replace: '<a', '<a class="link"' }}
     </div>
     {% endif %}
     {% when 'button' %}
     {% if block.settings.button_text != blank and block.settings.button_link != blank %}
-    <div class="custom-richtext__button">
+    <div class="custom-richtext__button page-width center page-width--narrow">
         <a href="{{ block.settings.button_link }}" class="uppercase button">{{ block.settings.button_text }}</a>
     </div>
     {% endif %}
@@ -53,6 +72,17 @@
 }
 ],
 "blocks": [
+{
+"name": "Banner",
+"type": "banner",
+"settings": [
+
+{
+    "type": "image_picker",
+    "id": "banner",
+    "label": "Banner Image",
+    "info": "600*800 recommended"
+}]},
 {
 "name": "Caption",
 "type": "caption",
@@ -122,6 +152,9 @@
 {
 "name": "Rich Text",
 "blocks": [
+{
+"type": "banner"
+},
 {
 "type": "caption"
 },

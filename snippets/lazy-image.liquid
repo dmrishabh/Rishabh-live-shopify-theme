@@ -1,0 +1,36 @@
+{% comment %}
+    Renders a responsive image
+
+    Accepts:
+    - src: Image source
+    - alt: {String} Alternative text for image (Optional)
+    - class: {String} Additional classes for the image tag. Default is "image"
+    - width: {String} Size of the image. Values are "small" and "large". If not defined small sizes will be rendered
+
+    Usage:
+    {% render 'lazy-image', src: section.settings.image  %}
+{% endcomment %}
+
+{%- if src != nil -%}
+  {%- liquid
+    assign image_source = src
+    assign alt_text = alt | default: image_source.alt
+    assign class_names = 'image' | append: ' ' | append: class
+    assign image_widths = '165, 360, 535, 750, 1070, 1500' | append: image_source.width
+
+    if width == 'large'
+      assign image_widths = '1100, 1200, 1500, 1780, 2000, 3000' | append: image_source.width
+    endif    
+  -%}
+
+  {{ image_source 
+     | image_url: 
+         width: image_source.width 
+     | image_tag: 
+         loading: 'lazy', 
+         widths: image_widths, 
+         alt: alt_text,
+         class: class_names,
+         sizes: '(min-width: 1400px) 650px, (min-width: 1200px) 550px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)' 
+  }}
+{%- endif -%}
