@@ -1316,6 +1316,7 @@ button.shopify-payment-button__button--unbranded {
 
 .button,
 .shopify-challenge__button,
+button.shopify-payment-button__button--unbranded,
 .customer button {
   display: inline-flex;
   justify-content: center;

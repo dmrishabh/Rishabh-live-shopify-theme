@@ -73,8 +73,11 @@ function onKeyUpEscape(event) {
     
     var initFlickty = new Flickity(sliderElement, {
       accessibility: false,
+      watchCSS: true,
+      // enable Flickity in CSS when
+      // element:after { content: 'flickity' }
       prevNextButtons: true,
-      pageDots: false,
+      pageDots: true,
       adaptiveHeight: true,
       cellSelector: '.product__media-item',
       initialIndex: initialIndex

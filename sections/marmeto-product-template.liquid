@@ -3,184 +3,148 @@
 
 <script src="{{ 'marmeto-product.js' | asset_url }}" defer="defer"></script>
 
-<div class="product product-flex">
-  <div class="product-flexitem product-flexitem-images">
-    <div class="product__media-list">
-	  {%- for media in product.media -%}
-      	<div class="product__media-item">
-          {% render 'product-media', media: media %}
-      	</div>
-      {%- endfor -%}
+<div class="page-width page-width-desktop">
+  <div class="product-template__grid grid grid--1-col grid--2-col-desktop">
+    <div class="product-flexitem product-flexitem-images">
+      <div class="product__media-list">
+    	{%- for media in product.media -%}
+          <div class="product__media-item">
+            {% render 'product-media', media: media %}
+          </div>
+        {%- endfor -%}
+      </div>
     </div>
-  </div>
-  
-  <div class="product-flexitem product-flexitem-info">
-    <div id="product-info-{{ section.id }}" class="product-info">
-      {%- for block in section.blocks -%}
-      	{%- case block.type -%}
-          {%- when 'badge' -%}      	  
-          <div class="product__badges" {{ block.shopify_attributes }}>
-            {%- for tag in product.tags -%}
-              {%- if tag contains 'badge__' -%}
-                {%- assign badgeText = tag | split: '__' | last -%}
-                <div class="product__badge">{{ badgeText }}</div>
-              {%- endif -%}
-            {%- endfor -%}
-          </div>
-      	{%- when '@app' -%}
-          {% render block %}
-      	{%- when 'text' -%}
-          <div class="product__text" {{ block.shopify_attributes }}>
-            {{- block.settings.text -}}
-          </div>
-      	{%- when 'title' -%}
-          <h1 class="product__title" {{ block.shopify_attributes }}>
-            {{ product.title | escape }}
-          </h1>
-      	{%- when 'price' -%}
-          <div id="price-{{ section.id }}" class="product__prices" {{ block.shopify_attributes }}>
-            <span class="price__regular {% if current_variant.compare_at_price > current_variant.price %}on-sale{% endif %}">{{ current_variant.price | money }}</span>
-            
-            {%- if current_variant.compare_at_price > current_variant.price -%}
-              <span class="price__compare">{{ current_variant.compare_at_price | money }}</span>
-              <span class="price__discount">{{ current_variant.compare_at_price | minus: current_variant.price | times: 100 | divided_by: current_variant.compare_at_price }}% Off</span>
-            {%- endif -%}
-          </div>     	  
-      	{%- when 'quantity_selector' -%}
-          <div class="product__quantity" {{ block.shopify_attributes }}>
-            <label class="quantity__label" for="Quantity-{{ section.id }}">
-              Quantity
-            </label>
-            
-			<marmeto-quantity-input class="quantity__flex">
-              <button class="quantity__button" name="minus" type="button">-</button>
-              <input class="quantity__input"
-                  type="number"
-                  name="quantity"
-                  id="Quantity-{{ section.id }}"
-                  min="1"
-                  value="1"
-                  form="{{ product_form_id }}"
-                >
-              <button class="quantity__button" name="plus" type="button">+</button>
-            </marmeto-quantity-input>
-          </div>
-      	{%- when 'variant_picker' -%}
-      	  {%- unless product.has_only_default_variant -%}
-            <marmeto-variant-radios class="product__variants" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
-              {%- for option in product.options_with_values -%}
-                <div class="product__variant">
-                  <label class="product__variant--label">{{ option.name }}</label>
-                  {%- for value in option.values -%}
-                    <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-                           name="{{ option.name }}"
-                           value="{{ value | escape }}"
-                           form="{{ product_form_id }}"
-                           {% if option.selected_value == value %}checked{% endif %}
-                           >
-                    <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-                      {{ value }}
-                    </label>
+    
+    <div class="product-flexitem product-flexitem-info">
+      <div id="product-info-{{ section.id }}" class="product-info">
+        {%- for block in section.blocks -%}
+        	{%- case block.type -%}
+        	{%- when '@app' -%}
+              {% render block %}
+        	{%- when 'text' -%}
+              <div class="caption uppercase" {{ block.shopify_attributes }}>
+                {{- block.settings.text -}}
+              </div>
+        	{%- when 'title' -%}
+              <h1 class="product__title h3" {{ block.shopify_attributes }}>
+                {{ product.title | escape }}
+              </h1>
+        	{%- when 'price' -%}
+              <div id="price-{{ section.id }}" class="product__prices" {{ block.shopify_attributes }}>
+                <span class="price__regular {% if current_variant.compare_at_price > current_variant.price %}on-sale{% endif %}">{{ current_variant.price | money }}</span>
+                
+                {%- if current_variant.compare_at_price > current_variant.price -%}
+                  <span class="price__compare">{{ current_variant.compare_at_price | money }}</span>
+                  <span class="price__discount">{{ current_variant.compare_at_price | minus: current_variant.price | times: 100 | divided_by: current_variant.compare_at_price }}% Off</span>
+                {%- endif -%}
+              </div>     	  
+        	{%- when 'quantity_selector' -%}
+              <div class="product__quantity" {{ block.shopify_attributes }}>
+                <label class="quantity__label caption uppercase" for="Quantity-{{ section.id }}">
+                  Quantity
+                </label>
+                
+    			<marmeto-quantity-input class="quantity__flex">
+                  <button class="quantity__button" name="minus" type="button">-</button>
+                  <input class="quantity__input"
+                      type="number"
+                      name="quantity"
+                      id="Quantity-{{ section.id }}"
+                      min="1"
+                      value="1"
+                      form="{{ product_form_id }}"
+                    >
+                  <button class="quantity__button" name="plus" type="button">+</button>
+                </marmeto-quantity-input>
+              </div>
+        	{%- when 'variant_picker' -%}
+        	  {%- unless product.has_only_default_variant -%}
+                <marmeto-variant-radios class="product__variants" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
+                  {%- for option in product.options_with_values -%}
+                    <div class="product__variant">
+                      <label class="product__variant--label caption uppercase">{{ option.name }}</label>
+                      {%- for value in option.values -%}
+                        <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                               name="{{ option.name }}"
+                               value="{{ value | escape }}"
+                               form="{{ product_form_id }}"
+                               {% if option.selected_value == value %}checked{% endif %}
+                               >
+                        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                          {{ value }}
+                        </label>
+                      {%- endfor -%}
+                    </div>
                   {%- endfor -%}
-                </div>
-              {%- endfor -%}
-              
-              <script type="application/json">
-              	{{ product.variants | json }}
-              </script>
-            </marmeto-variant-radios>
-      	  {%- endunless -%}
-      	{%- when 'buy_buttons' -%}
-          <div {{ block.shopify_attributes }}>
-            <marmeto-product-form class="product__form">
-              <div class="product__form-error" role="alert" hidden>                
-                <span class="product__form-error-message"></span>
-              </div>
-
-              {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-                <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" disabled>
-
-                <div class="product__form-buttons">
-                  <button type="submit" name="add" class="product__form-button"
-                  {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
-                  >
-                    <span>
-                      {%- if product.selected_or_first_available_variant.available -%}
-                        ADD TO CART
-                      {%- else -%}
-                        SOLD OUT
+                  
+                  <script type="application/json">
+                  	{{ product.variants | json }}
+                  </script>
+                </marmeto-variant-radios>
+        	  {%- endunless -%}
+        	{%- when 'buy_buttons' -%}
+              <div {{ block.shopify_attributes }}>
+                <marmeto-product-form class="product__form">
+                  <div class="product__form-error" role="alert" hidden>                
+                    <span class="product__form-error-message"></span>
+                  </div>
+    
+                  {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" disabled>
+    
+                    <div class="product__form-buttons">
+                      <button type="submit" name="add" class="product__form-button button button--secondary"
+                      {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+                      >
+                        <span>
+                          {%- if product.selected_or_first_available_variant.available -%}
+                            ADD TO CART
+                          {%- else -%}
+                            SOLD OUT
+                          {%- endif -%}
+                        </span>
+                      </button>
+                      {%- if block.settings.show_dynamic_checkout -%}
+                        {{ form | payment_button }}
                       {%- endif -%}
-                    </span>
-                  </button>
-                  {%- if block.settings.show_dynamic_checkout -%}
-                    {{ form | payment_button }}
-                  {%- endif -%}
-                </div>
-              {%- endform -%}
-            </marmeto-product-form>
-          </div>
-      	{%- when 'description' -%}
-          {%- if product.description != blank -%}      		
-          {%- if product.description contains '<!--split-->' -%}
-          {%- assign descriptionPart = product.description | split: '<!--split-->' -%}
-              
-              <div class="description-tabs">
-                <div class="description-tabs__header">
-                {%- if descriptionPart[0] != blank -%}
-                    <div data-tab="firstPart" class="description-tabs__heading is--active">First Part</div>
-                {%- endif -%}
-                {%- if descriptionPart[1] != blank -%}
-                    <div data-tab="secondPart" class="description-tabs__heading">Second Part</div>
-                {%- endif -%}
-                {%- if descriptionPart[2] != blank -%}
-                    <div data-tab="thirdPart" class="description-tabs__heading">Third Part</div>
-                {%- endif -%}
-                  </div>
-              
-              <div class="description-tabs__contents">
-                  {%- if descriptionPart[0] != blank -%}
-                    <div id="firstPart" class="description-tabs__content is--active">{{ descriptionPart[0] }}</div>
-                {%- endif -%}
-                {%- if descriptionPart[1] != blank -%}
-                    <div id="secondPart" class="description-tabs__content">{{ descriptionPart[1] }}</div>
-                {%- endif -%}
-                {%- if descriptionPart[2] != blank -%}
-                    <div id="thirdPart" class="description-tabs__content">{{ descriptionPart[2] }}</div>
-                {%- endif -%}
-                  </div>
-              </div>  
-            {%- else -%}
-              <div class="product__description">
-              {{ product.description }}
-            </div>
-            {%- endif -%}
-          {%- endif -%}
-      	{%- when 'collapsible_tab' -%}
-          <div class="product__tab" {{ block.shopify_attributes }}>
-            <details id="Tabs-{{ block.id }}-{{ section.id }}">
-              <summary>
-                <div class="product__tab-summary">
-                  <div class="product__tab-title">
-                    {{ block.settings.heading | default: block.settings.page.title }}
-                  </div>
-                  <div class="product__tab-icon">
-                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
-                    </svg>
-                  </div>
-                </div>
-              </summary>
-              <div class="product__tab-content" id="ProductTab-{{ block.id }}-{{ section.id }}">
-                {{ block.settings.content }}
-                {{ block.settings.page.content }}
+                    </div>
+                  {%- endform -%}
+                </marmeto-product-form>
               </div>
-            </details>
-          </div>
-      	{%- endcase -%}
-      {%- endfor -%}
+        	{%- when 'description' -%}
+              {%- if product.description != blank -%}      		
+                <div class="product__description">
+                  {{ product.description }}
+                </div>
+              {%- endif -%}
+        	{%- when 'collapsible_tab' -%}
+              <div class="product__tab" {{ block.shopify_attributes }}>
+                <details id="Tabs-{{ block.id }}-{{ section.id }}">
+                  <summary>
+                    <div class="product__tab-summary">
+                      <div class="product__tab-title">
+                        {{ block.settings.heading | default: block.settings.page.title }}
+                      </div>
+                      <div class="product__tab-icon">
+                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </summary>
+                  <div class="product__tab-content" id="ProductTab-{{ block.id }}-{{ section.id }}">
+                    {{ block.settings.content }}
+                    {{ block.settings.page.content }}
+                  </div>
+                </details>
+              </div>
+        	{%- endcase -%}
+        {%- endfor -%}
+      </div>
     </div>
-  </div>
 </div>
+</div>
+
 
 
 
@@ -189,11 +153,12 @@
   {
     "name": "Product Information",
 	"tag": "section",
+    "class": "section product-page",
     "blocks": [
 	  {
         "type": "@app"
       },
-	  {
+	   {
         "type": "text",
         "name": "Text",
         "settings": [
@@ -264,16 +229,6 @@
             "type": "page",
             "id": "page",
             "label": "Tab content from page"
-          }
-        ]
-      },
-      {
-        "type": "badge",
-        "name": "Badge",
-        "settings": [
-          {
-            "type": "paragraph",
-            "content": "Add badge__{ text } tag on the product to show the badge text"
           }
         ]
       }
