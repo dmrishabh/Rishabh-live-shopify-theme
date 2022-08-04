@@ -30,16 +30,18 @@
                 {%- endif -%}
               {% when 'button' %}                             
                 <div class="image-overlay__buttons">
+                  <div class="grid">
                   {%- if block.settings.first_button_text != blank and block.settings.first_button_link != blank -%}
-                    <a href="{{ block.settings.first_button_link }}" class="button mr-1 button--{{ block.settings.first_button_type }}">
+                    <a href="{{ block.settings.first_button_link }}" class="button p-0 grid__item button--{{ block.settings.first_button_type }}">
                       {{ block.settings.first_button_text }}
                     </a>
                   {%- endif -%}
                   {%- if block.settings.second_button_text != blank and block.settings.second_button_link != blank -%}
-                    <a href="{{ block.settings.second_button_link }}" class="button button--{{ block.settings.second_button_type }}">
+                    <a href="{{ block.settings.second_button_link }}" class="button p-0 grid__item button--{{ block.settings.second_button_type }}">
                       {{ block.settings.second_button_text }}
                     </a>
                   {%- endif -%}
+                </div>    
                 </div>    
             {% endcase %}
           {% endfor %}

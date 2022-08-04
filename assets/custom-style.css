@@ -1,4 +1,7 @@
 /* dm global css */
+.p-0{
+  padding: 0;
+}
 .line-clamp-1{
   overflow: hidden;
   text-overflow: ellipsis;
@@ -406,4 +409,9 @@ width: 50%;
   margin-block-start: 0;
   margin-block-end: 0;
 
+}
+.image-overlay__buttons{
+  /* margin-bottom: 50px; */
+  width: 304px;
+  max-width: 100%;
 }

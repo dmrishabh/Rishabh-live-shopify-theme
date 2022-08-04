@@ -95,6 +95,140 @@
       "settings": {
       }
     },
+    "16596019415a3fffa7": {
+      "type": "dm-collection-list",
+      "blocks": {
+        "16596019415a7f137d-0": {
+          "type": "collection-content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_14.png",
+            "image_link": "",
+            "heading": "Men's Tree Dasher Relay",
+            "description": "<p>Classic Color, Natural Black<\/p>"
+          }
+        },
+        "16596019415a7f137d-1": {
+          "type": "collection-content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_19.png",
+            "image_link": "",
+            "heading": "Women's Tree Dasher Relay",
+            "description": "<p>Limited Edition Color, Blizzard<\/p>"
+          }
+        },
+        "16596019415a7f137d-2": {
+          "type": "collection-content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_18.png",
+            "image_link": "",
+            "heading": "Sugar Slider",
+            "description": "<p>Limited Edition Color, Natural Black<\/p>"
+          }
+        },
+        "16596019415a7f137d-3": {
+          "type": "collection-content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_17.png",
+            "image_link": "",
+            "heading": "Women's Tree Flyer",
+            "description": "<p>Limited Edition Color, Lux Pink<\/p>"
+          }
+        },
+        "16596019415a7f137d-4": {
+          "type": "collection-content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_15.png",
+            "image_link": "",
+            "heading": "Women's Tree Dasher Relay",
+            "description": "<p>Limited Edition Color, Blizzard<\/p>"
+          }
+        },
+        "16596019415a7f137d-5": {
+          "type": "collection-content",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_16.png",
+            "image_link": "",
+            "heading": "Men's Tree Skipper",
+            "description": "<p>Limited Edition Color, Hazy Beige<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "16596019415a7f137d-0",
+        "16596019415a7f137d-1",
+        "16596019415a7f137d-2",
+        "16596019415a7f137d-3",
+        "16596019415a7f137d-4",
+        "16596019415a7f137d-5"
+      ],
+      "settings": {
+        "section_heading": "New Arrivals"
+      }
+    },
+    "165945340907eb0ce2": {
+      "type": "dm-rich-text",
+      "blocks": {
+        "16594534096183f387-0": {
+          "type": "banner",
+          "settings": {
+            "banner": "shopify:\/\/shop_images\/image_4.png"
+          }
+        },
+        "16594534096183f387-1": {
+          "type": "caption",
+          "disabled": true,
+          "settings": {
+            "caption": "caption"
+          }
+        },
+        "16594534096183f387-2": {
+          "type": "heading",
+          "settings": {
+            "heading": "Let Your Feet Breathe"
+          }
+        },
+        "16594534096183f387-3": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Subheading"
+          }
+        },
+        "16594534096183f387-4": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>The study concluded that<strong>anyone with balance problems, or reduced sensation in the feet should avoid soft sole shoes as they can be a potential hazard to your foot and overall health<\/strong><\/p>"
+          }
+        },
+        "16594534096183f387-5": {
+          "type": "button",
+          "settings": {
+            "button_text": "SHOP NOW",
+            "button_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "16594534096183f387-0",
+        "16594534096183f387-1",
+        "16594534096183f387-2",
+        "16594534096183f387-3",
+        "16594534096183f387-4",
+        "16594534096183f387-5"
+      ],
+      "settings": {
+      }
+    },
+    "16595213255df7457f": {
+      "type": "dm-product-list",
+      "settings": {
+        "section_heading": "Our handpicked choices",
+        "show_view_all": true,
+        "view_all_btn_link": "shopify:\/\/collections\/all",
+        "collection": "exclusive-for-athletese",
+        "product_limit": 8
+      }
+    },
     "16593633749c26d32f": {
       "type": "dm-collection-list",
       "blocks": {
@@ -165,6 +299,68 @@
         "section_heading": "Shop the collection"
       }
     },
+    "165945325881817411": {
+      "type": "dm-rich-text",
+      "blocks": {
+        "165945325825a01f89-0": {
+          "type": "banner",
+          "settings": {
+            "banner": "shopify:\/\/shop_images\/image_1.png"
+          }
+        },
+        "165945325825a01f89-1": {
+          "type": "caption",
+          "disabled": true,
+          "settings": {
+            "caption": "caption"
+          }
+        },
+        "165945325825a01f89-2": {
+          "type": "heading",
+          "settings": {
+            "heading": "Can Sustainable Shoes Save The Planet ?"
+          }
+        },
+        "165945325825a01f89-3": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Subheading"
+          }
+        },
+        "165945325825a01f89-4": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>We think it’s a good place to start. Explore our approach to sustainable footwear, sustainable apparel and reducing our environmental impact. Check out our progress so far, and our bold list of commitments for 2025.<\/p>"
+          }
+        },
+        "165945325825a01f89-5": {
+          "type": "button",
+          "settings": {
+            "button_text": "OUR SUSTAINABLE PRACTICES",
+            "button_link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "165945325825a01f89-0",
+        "165945325825a01f89-1",
+        "165945325825a01f89-2",
+        "165945325825a01f89-3",
+        "165945325825a01f89-4",
+        "165945325825a01f89-5"
+      ],
+      "settings": {
+      }
+    },
+    "165950373548896166": {
+      "type": "dm-blog-list",
+      "settings": {
+        "section_heading": "Stories",
+        "blog": "news",
+        "article_limit": 3
+      }
+    },
     "1659503958711028a1": {
       "type": "dm-image-with-text",
       "blocks": {
@@ -218,68 +414,6 @@
         "image_url": "",
         "image_alignment": "left",
         "text_alignment": "left"
-      }
-    },
-    "165945340907eb0ce2": {
-      "type": "dm-rich-text",
-      "blocks": {
-        "16594534096183f387-0": {
-          "type": "banner",
-          "settings": {
-            "banner": "shopify:\/\/shop_images\/image_4.png"
-          }
-        },
-        "16594534096183f387-1": {
-          "type": "caption",
-          "disabled": true,
-          "settings": {
-            "caption": "caption"
-          }
-        },
-        "16594534096183f387-2": {
-          "type": "heading",
-          "settings": {
-            "heading": "Let Your Feet Breathe"
-          }
-        },
-        "16594534096183f387-3": {
-          "type": "subheading",
-          "disabled": true,
-          "settings": {
-            "subheading": "Subheading"
-          }
-        },
-        "16594534096183f387-4": {
-          "type": "paragraph",
-          "settings": {
-            "paragraph": "<p>The study concluded that<strong>anyone with balance problems, or reduced sensation in the feet should avoid soft sole shoes as they can be a potential hazard to your foot and overall health<\/strong><\/p>"
-          }
-        },
-        "16594534096183f387-5": {
-          "type": "button",
-          "settings": {
-            "button_text": "SHOP NOW",
-            "button_link": "#"
-          }
-        }
-      },
-      "block_order": [
-        "16594534096183f387-0",
-        "16594534096183f387-1",
-        "16594534096183f387-2",
-        "16594534096183f387-3",
-        "16594534096183f387-4",
-        "16594534096183f387-5"
-      ],
-      "settings": {
-      }
-    },
-    "165950373548896166": {
-      "type": "dm-blog-list",
-      "settings": {
-        "section_heading": "Stories",
-        "blog": "news",
-        "article_limit": 3
       }
     },
     "1659503980ad35f57a": {
@@ -337,70 +471,6 @@
         "text_alignment": "right"
       }
     },
-    "16595213255df7457f": {
-      "type": "dm-product-list",
-      "settings": {
-        "section_heading": "Our handpicked choices",
-        "show_view_all": true,
-        "view_all_btn_link": "shopify:\/\/collections\/all",
-        "collection": "exclusive-for-athletese",
-        "product_limit": 8
-      }
-    },
-    "165945325881817411": {
-      "type": "dm-rich-text",
-      "blocks": {
-        "165945325825a01f89-0": {
-          "type": "banner",
-          "settings": {
-            "banner": "shopify:\/\/shop_images\/image_1.png"
-          }
-        },
-        "165945325825a01f89-1": {
-          "type": "caption",
-          "disabled": true,
-          "settings": {
-            "caption": "caption"
-          }
-        },
-        "165945325825a01f89-2": {
-          "type": "heading",
-          "settings": {
-            "heading": "Can Sustainable Shoes Save The Planet ?"
-          }
-        },
-        "165945325825a01f89-3": {
-          "type": "subheading",
-          "disabled": true,
-          "settings": {
-            "subheading": "Subheading"
-          }
-        },
-        "165945325825a01f89-4": {
-          "type": "paragraph",
-          "settings": {
-            "paragraph": "<p>We think it’s a good place to start. Explore our approach to sustainable footwear, sustainable apparel and reducing our environmental impact. Check out our progress so far, and our bold list of commitments for 2025.<\/p>"
-          }
-        },
-        "165945325825a01f89-5": {
-          "type": "button",
-          "settings": {
-            "button_text": "OUR SUSTAINABLE PRACTICES",
-            "button_link": "shopify:\/\/collections\/all"
-          }
-        }
-      },
-      "block_order": [
-        "165945325825a01f89-0",
-        "165945325825a01f89-1",
-        "165945325825a01f89-2",
-        "165945325825a01f89-3",
-        "165945325825a01f89-4",
-        "165945325825a01f89-5"
-      ],
-      "settings": {
-      }
-    },
     "1659453031d7ee291f": {
       "type": "dm-newsletter",
       "settings": {
@@ -415,13 +485,14 @@
   "order": [
     "16594513993fd6576d",
     "165945312981440c1c",
-    "16593633749c26d32f",
-    "1659503958711028a1",
+    "16596019415a3fffa7",
     "165945340907eb0ce2",
-    "165950373548896166",
-    "1659503980ad35f57a",
     "16595213255df7457f",
+    "16593633749c26d32f",
     "165945325881817411",
+    "165950373548896166",
+    "1659503958711028a1",
+    "1659503980ad35f57a",
     "1659453031d7ee291f"
   ]
 }
