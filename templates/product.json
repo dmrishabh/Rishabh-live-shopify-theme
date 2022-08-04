@@ -14,11 +14,6 @@
           "settings": {
           }
         },
-        "dbbac446-b2bf-43e6-9c04-2da15e517bdc": {
-          "type": "quantity_selector",
-          "settings": {
-          }
-        },
         "190c5b66-f031-4724-b1c5-a92ea4cd2364": {
           "type": "price",
           "settings": {
@@ -29,15 +24,15 @@
           "settings": {
           }
         },
+        "dbbac446-b2bf-43e6-9c04-2da15e517bdc": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
         "1285be85-196b-43f9-b289-30883118f628": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true
-          }
-        },
-        "6a7e5c38-97de-4bc4-96bb-62df94d66b2c": {
-          "type": "badge",
-          "settings": {
           }
         },
         "f61775d9-ddca-4e6e-8279-0e2aff2db45b": {
@@ -49,11 +44,10 @@
       "block_order": [
         "b4b9b4b4-1027-4fa9-bae3-b9049a40dc61",
         "8583aded-814e-466a-ba26-dc592c05c16c",
-        "dbbac446-b2bf-43e6-9c04-2da15e517bdc",
         "190c5b66-f031-4724-b1c5-a92ea4cd2364",
         "43acfbc7-271a-4228-a3e9-348cb9319580",
+        "dbbac446-b2bf-43e6-9c04-2da15e517bdc",
         "1285be85-196b-43f9-b289-30883118f628",
-        "6a7e5c38-97de-4bc4-96bb-62df94d66b2c",
         "f61775d9-ddca-4e6e-8279-0e2aff2db45b"
       ],
       "settings": {
@@ -72,11 +66,18 @@
         "enable_product_recommendations": true,
         "title": "You may also like"
       }
+    },
+    "recently-viewed-products": {
+      "type": "marmeto-recently-viewed-products",
+      "settings": {
+        "title": "Recently viewed"
+      }
     }
   },
   "order": [
     "main",
     "product-upsell",
-    "product-recommendations"
+    "product-recommendations",
+    "recently-viewed-products"
   ]
 }
