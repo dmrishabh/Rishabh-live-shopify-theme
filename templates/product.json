@@ -58,9 +58,25 @@
       ],
       "settings": {
       }
+    },
+    "product-upsell": {
+      "type": "marmeto-upsell",
+      "settings": {
+        "enable_product_upselling": true,
+        "title": "Upsell Products"
+      }
+    },
+    "product-recommendations": {
+      "type": "marmeto-product-recommendations",
+      "settings": {
+        "enable_product_recommendations": true,
+        "title": "You may also like"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "product-upsell",
+    "product-recommendations"
   ]
 }

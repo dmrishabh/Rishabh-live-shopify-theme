@@ -1,4 +1,26 @@
 /* dm global css */
+.custom-card{
+  width: 100%;
+                
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px 0px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.custom-card__info{
+  padding: 2rem;
+  margin: 0;
+}
+.mt-1{
+  margin-top: 1rem;
+}
+.mt-10{
+  margin-top: 10px;
+}
+
+
 
 .dm-custom-banner-wrapper{
     
@@ -92,7 +114,7 @@ line-height: 0;
        
     }
 
-    .grid__item{
+    .bx-0{
       box-shadow: none !important;
     }
     

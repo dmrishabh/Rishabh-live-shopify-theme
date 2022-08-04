@@ -1,68 +1,45 @@
-<div class="blog-list__wrapper page-width">
-    <div class="title-wrapper">
-        <h2 class="blog-list_title h2">Stories</h2>
+{% if section.settings.blog != blank %}
+    <div class="page-width custom-blog-list">
+        <div class="title-wrapper">
+            <h2>{{ section.settings.section_heading }}</h2>
+        </div>
+
+        <div class="grid grid--3-col-desktop grid--1-col grid--2-col-tablet">
+            {% for article in section.settings.blog.articles limit: section.settings.article_limit %}
+            
+                <div class="grid__item custom-card" >
+                    {% render 'dm-article-card' , article: article %}
+                </div>
+            {% endfor %}
+        </div>
     </div>
-    <div class="grid grid--3-col-desktop grid--1-col grid--2-col-tablet">
-        {% if section.settings.blog != nil %}
-            {% assign articles = section.settings.blog.articles %}
-            {% assign num = section.settings.blog.articles.size | minus: 1 %}
-            {% for index in (0..num) %}
-            <div class="blog-list grid__item" >
-                <a href="{{ articles[index].url }}">
-                    <div class="media media--square">
-                        {% if articles[index].image != nil %}
-                            <img
-                                srcset="{%- if articles[index].image.src.width >= 165 -%}{{ articles[index].image.src | image_url: width: 165 }} 165w,{%- endif -%}
-                                {%- if articles[index].image.width >= 360 -%}{{ articles[index].image | image_url: width: 360 }} 360w,{%- endif -%}
-                                {%- if articles[index].image.width >= 533 -%}{{ articles[index].image | image_url: width: 533 }} 533w,{%- endif -%}
-                                {%- if articles[index].image.width >= 720 -%}{{ articles[index].image | image_url: width: 720 }} 720w,{%- endif -%}
-                                {%- if articles[index].image.width >= 1000 -%}{{ articles[index].image | image_url: width: 1000 }} 1000w,{%- endif -%}
-                                {%- if articles[index].image.width >= 1500 -%}{{ articles[index].image | image_url: width: 1500 }} 1500w,{%- endif -%}
-                                {{ articles[index].image | image_url }} {{ articles[index].image.width }}w"
-                                src="{{ articles[index].image | image_url: width: 533 }}"
-                                alt="Image"
-                                loading="lazy"
-                                width="{{ articles[index].image.width }}"
-                                height="{{ articles[index].image.height }}"
-                            >
-                        {% else %}
-                            <div class="blog__image">
-                                {{ 'image' | placeholder_svg_tag }}
-                            </div>
-                        {% endif %}
-                    </div>
-                    <div class="custom-collection-list__card--info">
-                        <div class="blog__date">
-                            {{ articles[index].published_at | date: '%B %d, %Y' }}
-                        </div>
-                        <div class="blog__title h3">
-                            {{ articles[index].title }}
-                        </div>
-                        <div class="blog__excerpt">
-                            {{ articles[index].excerpt }}
-                        </div>
-                        <div class="blog_link">
-                            <a href="{{ articles[index].url }}">Read more
-                                {% render 'icon-arrow'%}
-                            </a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        {% endfor %}
-    {% endif %}
-    </div>
-</div>
-</div>
+{% endif %}
+
+
 {% schema %}
 {
     "name":"Custom Blog list",
     "class":"section",
     "settings":[
         {
+            "type":"text",
+            "id":"section_heading",
+            "label": "Section Heading",
+            "default":"Stories"
+        },
+        {
             "type":"blog",
             "id":"blog",
-            "label":"Blog"
+            "label":"Choose Blog post"
+        },
+        {
+            "type":"range",
+            "id":"article_limit",
+            "label":"Blog post limit",
+            "min": 3,
+            "max": 6,
+            "step": 1,
+            "default": 3
         }
     ],
     "presets":[

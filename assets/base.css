@@ -899,6 +899,9 @@ summary::-webkit-details-marker {
   /* changed margin */
   margin-bottom: 0 ;
 }
+.title-wrapper > * {
+  margin: 0;
+}
 
 .title-wrapper-with-link {
   display: flex;
@@ -2918,4 +2921,40 @@ details-disclosure > details {
 }
 .no-l-height{
   line-height: 0;
+}
+
+/* collection banner  */
+
+.collection-banner {
+  position: relative;
+  margin-bottom: 25px;
+}
+.collection-banner__image {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+}
+.collection-banner__image-mobile {
+  display: none;
+}
+.collection-banner__title-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 500px;
+  transform: translate(-50%, -50%);
+}
+.collection-banner__title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 30px;
+}
+
+@media only screen and (max-width: 749px) {
+  .collection-banner__image {
+    display: none;
+  }
+  .collection-banner__image-mobile {
+    display: block;
+  }
 }

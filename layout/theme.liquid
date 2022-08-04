@@ -28,8 +28,9 @@
     {% endif %}
 
     {% render 'meta-tags' %}
-
+    
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'dm-product-card.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
 
     {%- liquid
@@ -212,12 +213,16 @@
     }
     </script>
 <!-- product card -->
-<script src="{{ 'dm-product-card.js' | asset_url }}" defer="defer"></script>
 <!-- product page -->
 {%- if request.page_type contains 'product' -%}
   	<link rel="stylesheet" href="{{ 'marmeto-product.css' | asset_url }}" type="text/css" />  
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+{%- endif -%}
+<!-- collection page -->
+{%- if request.page_type == 'collection' -%}
+  <link rel="stylesheet" href="{{ 'marmeto-filter.css' | asset_url }}" type="text/css" />
+	<script src="{{ 'marmeto-filter.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 </head>
 

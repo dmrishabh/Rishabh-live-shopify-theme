@@ -65,17 +65,17 @@
   
      <script type="application/json">
         [
-          {%- for variant in product.variants -%}
-            {%- assign variantJson = variant | json -%}
-            {%- assign getSize = variantJson | size | minus: 1 -%}
-            {%- assign variantJson = variantJson | slice: 0, getSize -%}
-            
-            {{- variantJson -}},
-            "product_id": "{{ product.id }}",
-            "product_handle": "{{ product.handle }}",
-            "metafield": "{{ variant.metafields.custom.variant_info }}"
-            }{% unless forloop.last %},{% endunless %}
-          {%- endfor -%}
+        {%- for variant in product.variants -%}
+        {%- assign variantJson = variant | json -%}
+        {%- assign getSize = variantJson | size | minus: 1 -%}
+        {%- assign variantJson = variantJson | slice: 0, getSize -%}
+        
+        {{- variantJson -}},
+        "product_id": "{{ product.id }}",
+        "product_handle": "{{ product.handle }}",
+        "metafield": "{{ variant.metafields.custom.variant_info }}"
+        }{% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
         ]
      </script>
   </marmeto-product-card>

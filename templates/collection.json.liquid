@@ -1,0 +1,63 @@
+{% layout none %}
+{% paginate collection.products by 100 %}
+[
+  {%- for product in collection.products -%}
+    {
+      "available": {{ product.available | json }},
+      "compare_at_price": {{ product.compare_at_price | json }},
+      "compare_at_price_max": {{ product.compare_at_price_max | json }},
+      "compare_at_price_min": {{ product.compare_at_price_min | json }},
+      "compare_at_price_varies": {{ product.compare_at_price_varies | json }},
+      "created_at": "{{ product.created_at }}",
+      "featured_image": "{{ product.featured_image | img_url: 'master' }}",
+      "handle": "{{ product.handle }}",
+      "id": {{ product.id | json }},
+      "images": {{ product.images | json }},
+      "media": {{ product.media | json }},
+      "options": {{ product.options_with_values | json }},
+      "price": {{ product.price | json }},
+      "price_max": {{ product.price_max | json }},
+      "price_min": {{ product.price_min | json }},
+      "price_varies": {{ product.price_varies | json }},
+      "published_at": "{{ product.published_at }}",
+      "title": {{ product.title | json }},
+      "type": "{{ product.type }}",
+      "url": "{{ product.url }}",
+      "variants": [
+        {%- for variant in product.variants -%}
+          {
+            "available": {{ variant.available | json }},
+            "barcode": {{ variant.barcode | json }},
+            "compare_at_price": {{ variant.compare_at_price | json }},
+            "featured_image": {{ variant.featured_image | json }},
+            "featured_media": {{ variant.featured_media | json }},
+            "inventory_management": {{ variant.inventory_management | json }},
+            "option1": {{ variant.option1 | json }},
+            "option2": {{ variant.option2 | json }},
+            "option3": {{ variant.option3 | json }},
+            "options": {{ variant.options | json }},
+            "price": {{ variant.price | json }},
+            "public_title": {{ variant.public_title | json }},
+            "requires_selling_plan": {{ variant.requires_selling_plan | json }},
+            "requires_shipping": {{ variant.requires_shipping | json }},
+            "selling_plan_allocations": {{ variant.selling_plan_allocations | json }},
+            "sku": {{ variant.sku | json }},
+            "taxable": {{ variant.taxable | json }},
+            "title": {{ variant.title | json }},
+            "weight": {{ variant.weight | json }},
+            "inventory_quantity": {{ variant.inventory_quantity | json }},
+            "incoming": {{ variant.incoming | json }},
+            "id": {{ variant.id | json }},
+            "inventory_policy": {{ variant.inventory_policy | json }},
+            "next_incoming_date": {{variant.next_incoming_date | json }}
+          }{% unless forloop.last %},{% endunless%}
+        {%- endfor -%}
+      ],
+      "vendor": "{{ product.vendor }}",
+      "tags": {{ product.tags | json }},
+			"metafields": {	
+	    }
+    }{%- unless forloop.last %},{% endunless -%}
+  {%- endfor -%}
+]
+{% endpaginate %}

@@ -1,0 +1,26 @@
+<a href="{{ article.url }}">
+    <div class="media media--square">
+        {% render 'lazy-image' , src: article.image %}
+
+    </div>
+    <div class="custom-card__info">
+        <div class="caption">
+            <span>{{ article.user.first_name }}</span>
+            <span>
+                {{ article.published_at | date: '%B %d, %Y' }}
+            </span>
+        </div>
+        <div class="h3 line-clamp-1">
+            {{ article.title }}
+        </div>
+        {% if article.excerpt != blank %}
+        <div class="mt-10 line-clamp-3">
+            {{ article.excerpt }} 
+        </div>
+        {% else %}
+        <div class="mt-1 line-clamp-3 ">
+            {{ article.content }}
+        </div>
+        {% endif %}
+    </div>
+</a>

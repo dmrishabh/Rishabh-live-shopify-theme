@@ -2,7 +2,7 @@
 <marmeto-product-card class="product-card">
     <div class="isolate product-card__wrap">
       {%- liquid
-        assign current_variant = product.selected_or_first_available_variant
+        assign current_variant = product.first_available_variant
         assign price = current_variant.price
         assign compare_at_price = current_variant.compare_at_price    
         assign available = current_variant.available | default: false
@@ -15,8 +15,8 @@
 
 
 
- <a href="{{ product.url }}" class="media media--portrait">
-      {% render 'lazy-image', src: featured_media %}
+    <a href="{{ product.url }}" class="media media--portrait">
+      {% render 'lazy-image', src: product.featured_media %}
     </a>
       
       <div class="product-card__badges absolute">
@@ -56,26 +56,30 @@
       {% else %}
         <input type="hidden" name="id" value="{{ current_variant.id }}">
       {% endunless %}
-  
-      <div class="product-card__action mt-10">
-        <button type="button" name="add" class="button">Add to Bag</button>
+        
+
+     <div class="product-card__action mt-10">
+        {% if current_variant.available %}
+          <button type="button" name="add" class="button">Add to Bag</button>
+        {% else %}
+          <button type="button" class="button" disabled>Sold Out</button>
+        {% endif %}
       </div>
     </div>
   
      <script type="application/json">
         [
-          {%- for variant in product.variants -%}
-            {%- assign variantJson = variant | json -%}
-            {%- assign getSize = variantJson | size | minus: 1 -%}
-            {%- assign variantJson = variantJson | slice: 0, getSize -%}
-            
-            {{- variantJson -}},
-
-           "product_id": "{{ product.id }}",
-           "product_handle": "{{ product.handle }}",
-            "metafield": "{{ variant.metafields.custom.variant_info }}"
-            }{% unless forloop.last %},{% endunless %}
-          {%- endfor -%}
+        {%- for variant in product.variants -%}
+        {%- assign variantJson = variant | json -%}
+        {%- assign getSize = variantJson | size | minus: 1 -%}
+        {%- assign variantJson = variantJson | slice: 0, getSize -%}
+        
+        {{- variantJson -}},
+        "product_id": "{{ product.id }}",
+        "product_handle": "{{ product.handle }}",
+        "metafield": "{{ variant.metafields.custom.variant_info }}"
+        }{% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
         ]
      </script>
   </marmeto-product-card>

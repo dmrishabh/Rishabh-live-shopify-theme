@@ -40,7 +40,7 @@
 
 <div class="page-width">
   <div class="grid grid--gapless grid--1-col grid--2-col-tablet grid--3-col-tablet image-text--{{ section.settings.image_alignment }}">
-    <div class="grid__item grid__item--line-height-0">
+    <div class="grid__item bx-0 grid__item--line-height-0">
       {%- capture image_html -%}      
         {%- if section.settings.image != blank -%}
         {% render 'lazy-image', src: section.settings.image, width: "large" %}
@@ -59,7 +59,7 @@
         </div>
       {%- endif -%}
     </div>
-    <div class="grid__item image-with-text--grid__item">
+    <div class="grid__item bx-0 image-with-text--grid__item">
       <div class="image-text__textwrap {{ section.settings.text_alignment }}">
         {%- for block in section.blocks -%}
           {%- case block.type -%}

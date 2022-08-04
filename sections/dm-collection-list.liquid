@@ -1,157 +1,101 @@
-{% if section.blocks.size > 0 %}
+{%- if section.blocks.size > 0 -%}
+  <div class="custom-collection-list page-width">
+    {%- if section.settings.section_heading != blank -%}
+      <div class="title-wrapper">
+        <h2>{{ section.settings.section_heading }}</h2>
+      </div>
+    {%- endif -%}
 
-<div class="page-width custom-collection-list">
+    <div class="grid grid--1-col grid--2-col-tablet grid--3-col-desktop">
+      {%- for block in section.blocks -%}
+        <div class="grid__item">
+          <a href="{{ block.settings.image_link }}" class="custom-collection-list__card">
+            {%- if block.settings.image != nil -%}
+              <div class="media media--square">
+            {% render 'lazy-image', src: block.settings.image, width: "large" %}
+              </div>
+              {% else %}
+              <div class="media media--square">
 
-  {% if section.settings.section_heading != blank %}
+              {{ 'image' | placeholder_svg_tag }}
+              </div>
+            {%- endif -%}
 
-  <div class="title-wrapper">
-
-    <h2>{{ section.settings.section_heading }}</h2>
-
-  </div>
-
-  {% endif %}
-
-  <div class="grid grid--1-col grid--2-col-tablet grid--3-col-desktop">
-    {% for block in section.blocks %}
-
-    <div class="grid__item">
-
-      <!-- parent div -->
-
-      <div class="custom-collection-list__card">
-
-      
-
-      <a href="{{ block.settings.image_link }}">
-        {% if block.settings.image != blank %}
-
-        <div class="media media--square">
-
-          <img srcset="{%- if block.settings.image.src.width >= 360 -%}{{ block.settings.image.src | image_url: width: 360 }} 360w,{%- endif -%}
-    {%- if block.settings.image.src.width >= 533 -%}{{ block.settings.image.src | image_url: width: 533 }} 533w,{%- endif -%}
-    {%- if block.settings.image.src.width >= 720 -%}{{ block.settings.image.src | image_url: width: 720 }} 720w,{%- endif -%}
-    {%- if block.settings.image.src.width >= 1000 -%}{{ block.settings.image.src | image_url: width: 1000 }} 1000w,{%- endif -%}
-  
-    {{ block.settings.image.src | image_url }} {{ block.settings.image.src.width }}w"
-            src="{{ block.settings.image.src | image_url: width: 720 }}"
-            sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-            alt="{{ block.settings.image.src.alt | escape }}" class="motion-reduce" {% unless lazy_load==false
-            %}loading="lazy" {% endunless %} width="{{ block.settings.image.width }}"
-            height="{{ block.settings.image.height }}">
-
+            <div class="custom-collection-list__card--info">
+              {%- if block.settings.heading != blank -%}
+                <div class="h3">
+                  {{ block.settings.heading }}
+                </div>
+              {%- endif -%}
+              {%- if block.settings.description != blank -%}
+                {{ block.settings.description }}
+              {%- endif -%}
+            </div>
+          </a>
         </div>
-
-        {% else %}
-          
-       <!-- svg tag here  -->
-
-        {% endif %}
-
-
-        <div class="custom-collection-list__card--info">
-          {% if block.settings.heading != blank %}
-
-          <div class="h3">
-            {{ block.settings.heading }}
-          </div>
-          {% endif %}
-
-          {% if block.settings.description != blank %}
-
-          
-            {{ block.settings.description }}
-
-
-          {% endif %}
-
-
-        </a>
-
-      </div>
-      </div>
-
+      {%- endfor -%}
     </div>
-
-    {% endfor %}
   </div>
-
-
-</div>
-
-{% endif %}
+{%- endif -%}
 
 
 {% schema %}
 {
-"name": "Custom collection list",
-"tag": "section",
-"class": "section",
-"max_blocks": 6,
-"settings": [
-{
-"type": "text",
-"id": "section_heading",
-"label": "Section Heading",
-"default": "Shop the collection"
-}
-],
-"blocks": [
-{
-"name": "Collection Content",
-"type": "collection-content",
-"settings": [
-{
-"type": "image_picker",
-"id": "image",
-"label": "Image",
-"info": "600*800 recommended"
-},
-{
-  "type": "url",
-  "id": "image_url",
-  "label": "Image Link"
-  
-},
-{
-"type": "text",
-"id": "heading",
-"label": "Heading",
-"default": "Image Heading"
-},
-{
-"type": "richtext",
-"id": "description",
-"label": "Description",
-"default": "<p> lore ipusm </p>"
-}
-]
-}
-],
-"presets": [
-{
-"name": "Custom Collection List",
-"blocks": [
-{
-"type": "collection-content"
-},
-{
-"type": "collection-content"
-},
-{
-"type": "collection-content"
-},
-{
-"type": "collection-content"
-},
-{
-"type": "collection-content"
-},
-{
-"type": "collection-content"
-}
-]
-}
-]
+  "name": "Custom Collection List",
+  "class": "section",
+  "tag": "section",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section heading",
+      "default": "Shop The Collections"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection-content",
+      "name": "Collection content",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "800x800 .jpg recommended"
+        },
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": "Image link"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Image Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "default": "<p>Light, breezy, and made with planet-friendly eucalyptus, these favorites will keep you cool when the sun is shining.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Collection List",
+      "blocks": [
+        { "type": "collection-content" },
+        { "type": "collection-content" },
+        { "type": "collection-content" },
+        { "type": "collection-content" },
+        { "type": "collection-content" },
+        { "type": "collection-content" }
+      ]
+    }
+  ]
 }
 {% endschema %}

@@ -76,7 +76,7 @@
           "type": "collection-content",
           "settings": {
             "image": "shopify:\/\/shop_images\/7B9A6626.jpg",
-            "image_url": "shopify:\/\/collections\/all",
+            "image_link": "",
             "heading": "Shoes For Summer",
             "description": "<p>Light, breezy, and made with planet-friendly eucalyptus, these favorites will keep you cool when the sun is shining.<\/p>"
           }
@@ -85,7 +85,7 @@
           "type": "collection-content",
           "settings": {
             "image": "shopify:\/\/shop_images\/New-Arrivals-Tile.jpg",
-            "image_url": "shopify:\/\/collections",
+            "image_link": "",
             "heading": "New Arrivals",
             "description": "<p>The latest styles and limited edition colors that you can only find here (while they last, that is).<\/p>"
           }
@@ -94,7 +94,7 @@
           "type": "collection-content",
           "settings": {
             "image": "shopify:\/\/shop_images\/Story-Carousel.jpg",
-            "image_url": "shopify:\/\/collections",
+            "image_link": "",
             "heading": "Smallbirds For Kids",
             "description": "<p>We took a shrink ray to two of our most-loved styles to create the perfect pair for kiddos size 5T-3Y. Machine washable. Easy to slip on and off. Oh and they play nice with the planet.<\/p>"
           }
@@ -103,7 +103,7 @@
           "type": "collection-content",
           "settings": {
             "image": "shopify:\/\/shop_images\/Basic-Bundle-Story-Carousel.jpg",
-            "image_url": "",
+            "image_link": "",
             "heading": "Bundle Your Basics",
             "description": "<p>Save up to 30% when you bundle your favorite Trino® basics. <\/p>"
           }
@@ -112,7 +112,7 @@
           "type": "collection-content",
           "settings": {
             "image": "shopify:\/\/shop_images\/CollectionsCarousel.jpg",
-            "image_url": "",
+            "image_link": "",
             "heading": "The Sugar Series",
             "description": "<p>The cushioned comfort of the Sugar Zeffers and Sugar Sliders will make prepping for summer that much sweeter.<\/p>"
           }
@@ -121,7 +121,7 @@
           "type": "collection-content",
           "settings": {
             "image": "shopify:\/\/shop_images\/22Q1-Dasher1-CollectionsCarousel.jpg",
-            "image_url": "",
+            "image_link": "",
             "heading": "The Running Shop",
             "description": "<p>Break a sweat, not the planet in our running shoes, trail shoes, and performance apparel — all made with a mix of sustainable materials.<\/p>"
           }
@@ -251,7 +251,9 @@
     "165950373548896166": {
       "type": "dm-blog-list",
       "settings": {
-        "blog": "news"
+        "section_heading": "Stories",
+        "blog": "news",
+        "article_limit": 3
       }
     },
     "1659503980ad35f57a": {
@@ -316,7 +318,7 @@
         "show_view_all": true,
         "view_all_btn_link": "shopify:\/\/collections\/all",
         "collection": "exclusive-for-athletese",
-        "product_limit": 6
+        "product_limit": 8
       }
     },
     "165945325881817411": {
