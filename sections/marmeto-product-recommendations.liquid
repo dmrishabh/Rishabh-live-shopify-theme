@@ -3,7 +3,7 @@
 
   {%- if recommendations.performed -%}
     {%- if recommendations.products_count > 0 -%}
-      <div class="page-width">
+      <div class="">
         {%- if section.settings.title != blank -%}
           <div class="title-wrapper">
             <h2>{{ section.settings.title | escape }}</h2>  
@@ -20,7 +20,7 @@
       </div>
     {%- endif -%}
   {%- else  -%}
-    <div class="mm-recommendations" data-base-url="{{ routes.product_recommendations_url }}" data-product-id="{{ product.id }}" data-section-id="{{ section.id }}" data-section-type="marmeto-product-recommendations"></div>
+    <div class="page-width" data-base-url="{{ routes.product_recommendations_url }}" data-product-id="{{ product.id }}" data-section-id="{{ section.id }}" data-section-type="marmeto-product-recommendations"></div>
   {%- endif -%}
 {%- endif -%}
 
@@ -29,6 +29,7 @@
   {
     "name": "Product recommendations",
 	"tag": "section",
+	"class": "section",
     "settings": [
       {
         "type": "checkbox",

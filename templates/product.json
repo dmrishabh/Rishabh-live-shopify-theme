@@ -76,8 +76,8 @@
   },
   "order": [
     "main",
-    "product-upsell",
+    "recently-viewed-products",
     "product-recommendations",
-    "recently-viewed-products"
+    "product-upsell"
   ]
 }

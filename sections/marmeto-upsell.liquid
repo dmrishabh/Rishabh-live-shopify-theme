@@ -8,7 +8,7 @@
 {%- assign upsell_handles = upsell_handles | split: ',' | uniq -%}
 
 {%- if section.settings.enable_product_upselling and upsell_handles.size > 0 -%}
-  <div class="page-width">
+  <div class="">
 	{%- if section.settings.title != blank -%}
      <div class="title-wrapper">
       <h2>
@@ -34,6 +34,7 @@
   {
     "name": "Upsell Section",
 	"tag": "section",
+	"class": "section page-width",
     "settings": [
 	  {
         "type": "paragraph",

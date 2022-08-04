@@ -2,13 +2,13 @@
 <marmeto-product-card class="product-card">
     <div class="isolate product-card__wrap">
       {%- liquid
-        assign current_variant = product.first_available_variant
+        assign current_variant = product.selected_or_first_available_variant
         assign price = current_variant.price
         assign compare_at_price = current_variant.compare_at_price    
         assign available = current_variant.available | default: false
         assign featured_media = product.featured_media
   
-        if current_variant.image == nil
+        if current_variant.image != nil
           assign featured_media = current_variant.image
         endif
       -%}
@@ -49,7 +49,7 @@
         <div class="field mt-10">
           <select name="id" class="product-card__options select__select">
             {% for variant in product.variants %}
-              <option value="{{ variant.id }}">{{ variant.title }}</option>
+              <option value="{{ variant.id }}" {% if variant.id == current_variant.id %}selected{% endif %}>{{ variant.title }}</option>
             {% endfor %}
           </select>
         </div> 
