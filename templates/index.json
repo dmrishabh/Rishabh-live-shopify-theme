@@ -2,17 +2,43 @@
   "sections": {
     "16594513993fd6576d": {
       "type": "dm-image-with-text-overlay",
+      "blocks": {
+        "4311e3db-aab2-48c5-9457-a0b27bc01657": {
+          "type": "heading",
+          "settings": {
+            "heading": "Bold Color. Big Comfort."
+          }
+        },
+        "df6522ff-a604-431e-aa74-17c4079184da": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Supercharge your summer with new limited edition hues.<\/p>"
+          }
+        },
+        "f73eff58-364c-4560-8118-473d23821a1f": {
+          "type": "button",
+          "settings": {
+            "first_button_text": "SHOP MEN",
+            "first_button_link": "shopify:\/\/collections\/exclusive-for-athletese",
+            "first_button_type": "secondary",
+            "second_button_text": "SHOP WOMEN",
+            "second_button_link": "shopify:\/\/collections\/all",
+            "second_button_type": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "4311e3db-aab2-48c5-9457-a0b27bc01657",
+        "df6522ff-a604-431e-aa74-17c4079184da",
+        "f73eff58-364c-4560-8118-473d23821a1f"
+      ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/image_3.png",
+        "image_desktop": "shopify:\/\/shop_images\/image_3.png",
         "image_mobile": "shopify:\/\/shop_images\/image_10.png",
-        "heading": "Bold Color. Big Comfort.",
-        "paragraph": "<p><strong>Supercharge your summer with new limited edition hues.<\/strong><\/p>",
-        "button_text": "SHOP MEN",
-        "button_url": "shopify:\/\/collections\/all",
-        "button_text_2": "SHOP WOMEN",
-        "button_url_2": "#",
         "notify_check": true,
-        "notify_text": "<p><strong>Discover Your Perfect Pair <\/strong> Try our Style Quiz to find the best pair for you.<a href=\"\/collections\/all\" target=\"_blank\" title=\"All products\">Take the Style Quiz<\/a><\/p>"
+        "notify_text": "<p><strong>Discover Your Perfect Pair <\/strong>Quiz to find the best pair for you <a href=\"\/collections\/all\" target=\"_blank\" title=\"All products\">Take the Style Quiz<\/a><\/p>",
+        "content_alignment": "align-end justify-start",
+        "text_alignment": "left"
       }
     },
     "165945312981440c1c": {

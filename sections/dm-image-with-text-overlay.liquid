@@ -1,57 +1,54 @@
-
 <div class="isolate">
-
-    {% if section.settings.image != blank  %}
-    <div class="no-l-height">
-    
-            {% render 'lazy-image', src: section.settings.image, width: "large", class:"dm-custom-image--image small-hide" %}
-            {% render 'lazy-image', src: section.settings.image_mobile, width: "large", class:"medium-hide large-up-hide dm-custom-image--image" %}
-    </div>
-    {% else %}
-    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-          {% endif %}
-
-
-
-<div class="text-overlay-content-wrap">
-
-  <div class="page-width full-height">
-
-    <div class="text-overlay-flex">
-
-       <div class="text-overlay-flex-item">
-
-        {% if section.settings.heading != blank %}
-        <div class="overlay-heading hxl font-body-bold no-pad page-width">
-            {{ section.settings.heading }}
-        </div>
-        {% endif %}
-        {% if section.settings.paragraph != blank %}
-        <div class="overlay-paragraph subtitle no-pad page-width">
-            {{ section.settings.paragraph }}
-        </div>
-        {% endif %}
-        <div class="button_group">
-        {% if section.settings.button_text != blank and section.settings.button_url != blank %}
-
-        <a href="{{ section.settings.button_url }}" class="button overlay-button">{{ section.settings.button_text }}</a>
-
-        {% endif %}
-        {% if section.settings.button_text_2 != blank and section.settings.button_url_2 != blank %}
-
-        <a href="{{ section.settings.button_url_2 }}" class="button overlay-button">{{ section.settings.button_text_2 }}</a>
-
-        {% endif %}
-
-       </div>
-       </div>
-
-    </div>
-
+  <div class="image-overlay__wrap">
+    {% render 'lazy-image', src: section.settings.image_desktop, width: "large", class: "small-hide" %}
+    {% render 'lazy-image', src: section.settings.image_mobile, width: "small", class: "medium-hide large-up-hide" %}
   </div>
 
+  <div class="image-overlay__content">
+    <div class="page-width">
+      <div class="image-overlay__flex {{ section.settings.content_alignment }}">
+        <div class="image-overlay__flexitem {{ section.settings.text_alignment }}">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'caption' %}
+                {%- if block.settings.caption != blank -%}                    
+                  <div class="caption font-white">
+                    {{ block.settings.caption }}
+                  </div>                    
+                {%- endif -%}
+              {% when 'heading' %}
+                {%- if block.settings.heading != blank -%}                    
+                  <div class="h2 font-white">
+                    {{ block.settings.heading }}
+                  </div>                    
+                {%- endif -%}
+              {% when 'paragraph' %}
+                {%- if block.settings.paragraph != blank -%}                    
+                  <div class="font-white text-body">
+                    {{ block.settings.paragraph }}
+                  </div>                    
+                {%- endif -%}
+              {% when 'button' %}                             
+                <div class="image-overlay__buttons">
+                  {%- if block.settings.first_button_text != blank and block.settings.first_button_link != blank -%}
+                    <a href="{{ block.settings.first_button_link }}" class="button mr-1 button--{{ block.settings.first_button_type }}">
+                      {{ block.settings.first_button_text }}
+                    </a>
+                  {%- endif -%}
+                  {%- if block.settings.second_button_text != blank and block.settings.second_button_link != blank -%}
+                    <a href="{{ block.settings.second_button_link }}" class="button button--{{ block.settings.second_button_type }}">
+                      {{ block.settings.second_button_text }}
+                    </a>
+                  {%- endif -%}
+                </div>    
+            {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
+<!-- notify -->
 {% if section.settings.notify_check %}
     
 <div class="notify-bar center">
@@ -65,112 +62,221 @@
 
   </div>
   {% endif %}
-  {% endif %}
 </div>
-
-
-</div>
-
+{% endif %}
 
 
 {% schema %}
 {
-"name": "Image With TextOverlay",
-"tag":"section",
-"class": "section",
-"settings": [
-
-{
-"type": "header",
-"content": "Image Settings"
-},
-
-{
-"type": "image_picker",
-"id": "image",
-"label": "Image",
-"info": "600 * 1080 recommended"
-},
-{
-"type": "image_picker",
-"id": "image_mobile",
-"label": "Image ( Mobile )",
-"info": "600 * 400 recommended"
-},
-{
-"type": "header",
-"content": "Text Settings"
-
-},
-
-{
-"type": "text",
-"id": "heading",
-"label": "Heading",
-"default": "Heading"
-},
-{
-"type": "richtext",
-"id": "paragraph",
-"label": "Paragraph",
-"default": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, vitae?</p>"
-
-},
-{
-"type": "header",
-"content": "Button Settings"
-
-},
-{
-"type": "text",
-"id": "button_text",
-"label": "Button Text",
-"default": "Button"
-},
-{
-"type": "url",
-"id": "button_url",
-"label": "Button Link"
-},
-{
-"type": "text",
-"id": "button_text_2",
-"label": "Button Text",
-"default": "Button"
-},
-{
-"type": "url",
-"id": "button_url_2",
-"label": "Button Link"
-},
-{
-"type": "header",
-"content": "Notification Bar Settings"
-
-},
-{
-"type": "checkbox",
-"id": "notify_check",
-"label": "Show Notification Bar",
-"default": true,
-"info": "Uncheck this to hide notification bar"
-},
-
-{
-"type": "richtext",
-"id": "notify_text",
-"label": "Notification",
-"default": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, molestias!</p>",
-"info": "Select text to Insert link"
-}
-
-
-],
-"presets": [
-{
-"category": "image",
-"name":"Image With Text Overlay"
-}
-]
+  "name": "Custom Image Overlay",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "IMAGE SETTINGS"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Image",
+      "info": "800x600 jpg recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image ( Mobile )",
+      "info": "400x600 jpg recommended"
+    },
+    {
+      "type": "header",
+      "content": "Notify bar SETTINGS"
+    },
+   {
+    "type": "checkbox",
+    "id": "notify_check",
+    "label": "Notification Bar",
+    "default": true,
+    "info": "Uncheck to turn of notify bar"
+   },
+  {
+    "type": "richtext",
+    "id": "notify_text",
+    "label": "Notification Text"
+  },
+    {
+      "type": "header",
+      "content": "ALIGNMENT SETTINGS"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content alignment",
+      "options": [
+        {
+          "value": "align-start justify-start",
+          "label": "Top left"
+        },
+        {
+          "value": "align-start justify-center",
+          "label": "Top left"
+        },
+        {
+          "value": "align-start justify-end",
+          "label": "Top Right"
+        },
+        {
+          "value": "align-center justify-start",
+          "label": "Middle left"
+        },
+        {
+          "value": "align-center justify-center",
+          "label": "Middle center"
+        },
+        {
+          "value": "align-center justify-end",
+          "label": "Middle right"
+        },
+        {
+          "value": "align-end justify-start",
+          "label": "Bottom left"
+        },
+        {
+          "value": "align-end justify-center",
+          "label": "Bottom center"
+        },
+        {
+          "value": "align-end justify-end",
+          "label": "Bottom right"
+        }
+      ],
+      "default": "align-center justify-center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text align",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Caption",
+      "type": "caption",
+      "settings": [
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "name": "Heading",
+      "type": "heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "name": "Paragraph",
+      "type": "paragraph",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "paragraph",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "type": "button",
+      "settings": [
+        {
+          "type": "header",
+          "content": "First button"
+        },
+        {
+          "type": "text",
+          "id": "first_button_text",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "first_button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "select",
+          "id": "first_button_type",
+          "label": "Button type",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "header",
+          "content": "Second button"
+        },
+        {
+          "type": "text",
+          "id": "second_button_text",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "second_button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "select",
+          "id": "second_button_type",
+          "label": "Button type",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            }
+          ],
+          "default": "primary"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Image Overlay"
+    }
+  ]
 }
 {% endschema %}
