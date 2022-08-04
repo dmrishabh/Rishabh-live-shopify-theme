@@ -10,24 +10,28 @@
   data-section-id="{{ section.id }}" 
   data-section-type="mm-recently-viewed-products" 
   data-section-settings='{{ section_settings }}'
+  class="page-width"
 >
   <div class="mm-recentlyviewed">
     {%- if section.settings.title != blank -%}
-      <h2 class="mm-recentlyviewed__title">
-        {{ section.settings.title | escape }}
-      </h2>      
-    {%- endif -%}
+          <div class="title-wrapper">
+            <h2>{{ section.settings.title | escape }}</h2>  
+          </div>    
+        {%- endif -%}
   
     <div class="mm-recentlyviewed__container">
       {%- if template.name == 'search' -%}
-        <div class="mm-recentlyviewed__products">
+        <div class="grid grid--2-col grid--3-col-tablet grid--4-col-desktop">
           {%- assign parsed_terms = search.terms | split: ' OR ' -%}
           {%- for parsed_term in parsed_terms -%}
             {%- assign id = parsed_term | split: 'id:' | last | times: 1 -%}
 
             {%- for product in search.results -%}
-              {%- if product.id == id -%}        	  
-                {%- render 'marmeto-product-item', product: product -%}
+              {%- if product.id == id -%}    
+              <div class="grid__item">
+                {%- render 'product-card', product: product -%}
+              </div>    	  
+              
                 {%- break -%}
               {%- endif -%}
             {%- endfor -%}

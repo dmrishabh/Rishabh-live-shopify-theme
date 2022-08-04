@@ -8,17 +8,22 @@
 {%- assign upsell_handles = upsell_handles | split: ',' | uniq -%}
 
 {%- if section.settings.enable_product_upselling and upsell_handles.size > 0 -%}
-  <div class="mm-upsell">
+  <div class="page-width">
 	{%- if section.settings.title != blank -%}
-      <h2 class="mm-upsell__title">
+     <div class="title-wrapper">
+      <h2>
         {{ section.settings.title | escape }}
-      </h2>      
+      </h2> 
+     </div>     
     {%- endif -%}
     
-    <div class="mm-upsell__products">
+    <div class="grid grid--2-col grid--3-col-tablet grid--4-col-desktop">
       {%- for handle in upsell_handles -%}
       	{%- assign product = all_products[handle] -%}
-      	{%- render 'marmeto-product-item', product: product -%}
+        <div class="grid__item">
+          {%- render 'product-card', product: product -%}
+
+        </div>
       {%- endfor -%}
     </div>
   </div>
