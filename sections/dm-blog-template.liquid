@@ -1,0 +1,41 @@
+{%- paginate blog.articles by 2 -%}
+  <div class="page-width">
+   <div class="title-wrapper center">
+      <h2>{{ section.settings.section_heading }}</h2>
+  </div>
+    <div class="grid grid--3-col-desktop grid--1-col grid--2-col-tablet">
+      {%- for article in blog.articles -%}
+        <div class="grid__item custom-card">
+         {% render 'dm-article-card' , article: article %}
+        </div>
+      {%- endfor -%}
+    </div>
+    {%- if paginate.pages > 1 -%}
+      {%- render 'pagination', paginate: paginate -%}
+    {%- endif -%}
+  </div>
+{%- endpaginate -%}
+{% schema %}
+{
+   "name": "Blog page",
+   "tag":"section",
+  "class": "section",
+ "settings": [
+   {
+   "type": "header",
+   "content": "Blog Section Settings"
+   },
+   {
+      "type":"text",
+      "id":"section_heading",
+      "label": "Section Heading",
+      "default":"Blogs"
+  },
+  {
+   "type":"blog",
+   "id":"blog",
+   "label":"Choose Blog post"
+  }
+ ]
+}
+{% endschema %}

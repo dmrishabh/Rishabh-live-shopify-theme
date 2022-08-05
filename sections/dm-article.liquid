@@ -1,0 +1,77 @@
+<div class="page-width">
+{% if section.settings.section_heading !=  blank %}
+    <div class="title-wrapper">
+        <h2>{{ section.settings.section_heading }}</h2>
+    </div>
+{% endif %}
+
+    {% if section.settings.show_banner %}
+
+    {% render 'lazy-image' , src: article.image %}
+
+    {% endif %}
+    <header {{ block.shopify_attributes }}>
+        <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
+        {%- if block.settings.blog_show_date -%}
+          <span class="circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">{{ article.published_at | time_tag: format: 'date' }}</span>
+        {%- endif -%}
+        {%- if block.settings.blog_show_author -%}
+          <span class="caption-with-letter-spacing" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name">{{ article.author }}</span>
+          </span>
+        {%- endif -%}
+      </header>
+
+      <div class="content">
+        {{ article.content }}
+      </div>
+
+     <div class="h3">
+        <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
+            <span class="icon-wrap">{% render 'icon-arrow' %}</span>
+            {{ 'blogs.article.back_to_blog' | t: title: blog.title }}
+          </a>
+     </div>
+
+
+
+</div>
+
+{% schema %}
+{
+    "name": "Article Page",
+    "tag":"section",
+   "class": "section",
+  "settings": [
+   {
+    "type": "header",
+    "content": "Article Page Settings"
+   },
+   {
+    "type":"text",
+    "id":"section_heading",
+    "label": "Section Heading",
+    "default":"Article Page"
+    },
+   {
+    "type": "checkbox",
+    "id": "show_banner",
+    "label": "Show Banner",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_author",
+    "label": "Show Author",
+    "default": true
+   },
+   {
+    "type": "checkbox",
+    "id": "show_date",
+    "label": "Show Date",
+    "default": true
+   }
+
+  ]
+}
+{% endschema %}

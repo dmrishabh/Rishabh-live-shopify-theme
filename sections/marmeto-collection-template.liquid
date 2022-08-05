@@ -14,14 +14,11 @@
   {%- if collection.image -%}
   {% assign mobileBanner = collection.metafields.collection.banner_mobile %}
 
-  <div class="collection-banner">    
-    <img src="{{ collection.image | img_url: 'master' }}" 
-         width="{{ collection.image.width }}"
-         height="{{ collection.image.height }}"
-         class="collection-banner__image"
-         loading="lazy"
-         alt="{{ collection.title | escape }}"
-    />    
+  <div class="collection-banner">
+        
+    {% render 'lazy-image' , src: collection.image, class:"collection-banner__image" %}
+
+      
     <img src="{{ mobileBanner | default: collection.image | img_url: 'master' }}" 
          class="collection-banner__image-mobile"
          alt="{{ collection.title | escape }}"

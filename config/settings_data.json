@@ -193,10 +193,19 @@
       "dm-announcement-bar": {
         "type": "dm-announcement-bar",
         "settings": {
-          "announcement_check": false,
+          "announcement_check": true,
           "announcement_text": "Smallbirds are back! Shop our best-selling kids shoes with even more styles and sizes.",
           "announcement_link": "shopify:\/\/collections\/all",
           "announcement_bar_color": "#046268"
+        }
+      },
+      "dm-header": {
+        "type": "dm-header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/allbirds-logo.png",
+          "logo_size_range": 200,
+          "logo_position": "left",
+          "menu": "main-menu"
         }
       }
     },

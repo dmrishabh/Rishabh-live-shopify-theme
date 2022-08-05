@@ -1,44 +1,25 @@
 {
   "sections": {
     "main": {
-      "type": "main-article",
-      "blocks": {
-        "featured_image": {
-          "type": "featured_image",
-          "settings": {
-            "image_height": "adapt"
-          }
-        },
-        "title": {
-          "type": "title",
-          "settings": {
-            "blog_show_date": true,
-            "blog_show_author": false
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
-        },
-        "content": {
-          "type": "content",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "featured_image",
-        "title",
-        "share",
-        "content"
-      ],
+      "type": "dm-article",
       "settings": {
+        "section_heading": "Article Page",
+        "show_banner": true,
+        "show_author": true,
+        "show_date": true
+      }
+    },
+    "related-blogs": {
+      "type": "dm-related-blogs",
+      "settings": {
+        "section_heading": "Related Blogs",
+        "blog": "news",
+        "article_limit": 3
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "related-blogs"
   ]
 }

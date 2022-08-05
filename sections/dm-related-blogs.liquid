@@ -1,0 +1,51 @@
+{% if section.settings.blog != blank %}
+    <div class="page-width custom-blog-list">
+        <div class="title-wrapper">
+            <h2>{{ section.settings.section_heading }}</h2>
+        </div>
+
+        <div class="grid grid--3-col-desktop grid--1-col grid--2-col-tablet">
+            {% for article in section.settings.blog.articles limit: section.settings.article_limit %}
+            
+                <div class="grid__item custom-card" >
+                    {% render 'dm-article-card' , article: article %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
+
+
+{% schema %}
+{
+    "name":"Related Blog list",
+    "class":"section",
+    "settings":[
+        {
+            "type":"text",
+            "id":"section_heading",
+            "label": "Section Heading",
+            "default":"Related Blogs"
+        },
+        {
+            "type":"blog",
+            "id":"blog",
+            "label":"Choose Blog post"
+        },
+        {
+            "type":"range",
+            "id":"article_limit",
+            "label":"Blog post limit",
+            "min": 3,
+            "max": 6,
+            "step": 1,
+            "default": 3
+        }
+    ],
+    "presets":[
+        {
+            "name":"Related Blog list"
+        }
+    ]
+}
+{% endschema %}
