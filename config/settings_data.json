@@ -211,7 +211,7 @@
       "dm-footer": {
         "type": "dm-footer",
         "settings": {
-          "image": "shopify:\/\/shop_images\/allbirds-logo.png",
+          "image": "shopify:\/\/shop_images\/allbirds-logo_1.png",
           "menu": "footer"
         }
       }

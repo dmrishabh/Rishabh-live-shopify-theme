@@ -11,7 +11,7 @@
             {% for linklist in section.settings.menu.links %}
                 <div class= "grid__item">
                         <ul class="underlined-link">
-                            <h4>{{ linklist.title }}</h4>
+                            <h4 class="font-white">{{ linklist.title }}</h4>
                         </ul>
                     {% for link in linklist.links %}
                         <li class="list-unstyled">{{ link.title | link_to: link.url }}</li>

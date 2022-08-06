@@ -614,6 +614,8 @@ width: 50%;
   }
     .footer__main{
       padding-top: 20px;
+      background-color: #212a2f;
+     color: #fff;
     }
     
     .footer__logo{
