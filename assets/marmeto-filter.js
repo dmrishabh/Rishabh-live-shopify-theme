@@ -727,43 +727,39 @@ marmeto.Collection = (function() {
 
           
         }
-        
-        //Product Image
-        productHtml += '<a href="'+ product.url +'" class="mmc-card-image" style="padding-bottom: '+ image_space +'%;">';
-        productHtml += '<img src="'+ product_image +'" alt="'+ product.title +'" />';
-        productHtml += '</a>';
-        
-        //Product Info
-        productHtml += '<div class="mmc-card-info">';        
-        productHtml += '<a href="'+ product.url +'" class="mmc-card-title">'+ product.title +'</a>';
-        
-        productHtml += '<div class="mmc-card-price">';        
-        
-        if(product.compare_at_price > product.price) {
-          productHtml += '<span class="mmc-price-sale">'+ _this.helpers().formatMoney(product.price) +'</span>';
-          productHtml += '<span class="mmc-price-compare">'+ _this.helpers().formatMoney(product.compare_at_price) +'</span>';
-          let discount = ((product.compare_at_price - product.price)*100)/product.compare_at_price;
-          
-          productHtml += '<span class="mmc-percent-discount">'+" ("+ Math.trunc(discount) + "% Off)" +'</span>';
+       //Product Image
+       productHtml += '<a href="'+ product.url +'" class="media media--portrait" >';
+       productHtml += '<img src="'+ product_image +'" alt="'+ product.title +'" />';
+       productHtml += '</a>';
+       
+       //Product Info
+       productHtml += '<div class="product-card__info">';        
+       productHtml += '<a href="'+ product.url +'" class="product-card__title">'+ product.title +'</a>';
+       
+       productHtml += '<div class="product-card__prices mt-1">';        
+       
+       if(product.compare_at_price > product.price) {
+         productHtml += '<span class="product-card__price">'+ _this.helpers().formatMoney(product.price) +'</span>';
+         productHtml += '<span class="product-card__compareprice">'+ _this.helpers().formatMoney(product.compare_at_price) +'</span>';
+       } else {
+         productHtml += '<span class="mmc-price-regular">'+ _this.helpers().formatMoney(product.price) +'</span>';
+       }
 
-        } else {
-          productHtml += '<span class="mmc-price-regular">'+ _this.helpers().formatMoney(product.price) +'</span>';
-        }
-        productHtml += '<div class="mmc-card-buy-btn">BUY</div>';        
-
-
-        productHtml += '</div>';        
-        productHtml += '</div>';
-        
-        productHtml += '</div>';  
-        productHtml += '</div>';
-        
-        return productHtml;
-      }
-    }
-  }
-  
-  return Collection;
+       productHtml += '</div>';        
+       productHtml += '</div>';
+       
+       productHtml += '</div>';
+       productHtml += '<div class="product-card__action mt-1">';
+       productHtml += '<a href="#" class="button">ADD TO CART</a>';
+       productHtml += '</div>';
+       productHtml += '</div>';
+       
+       return productHtml;
+     }
+   }
+ }
+ 
+ return Collection;
 })();
 
 new marmeto.Collection('marmeto-collection-template');

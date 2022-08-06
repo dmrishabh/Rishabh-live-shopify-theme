@@ -30,7 +30,7 @@
     {% render 'meta-tags' %}
     
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'dm-product-card.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'marmeto-product-card.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
 
     {%- liquid
@@ -234,6 +234,7 @@
     
     {% section 'dm-announcement-bar' %}
     {% section 'dm-header' %}
+  
     
 
    
@@ -246,6 +247,8 @@
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
       <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
     </ul>
+
+    {% section 'dm-footer' %}
 
     <script>
       window.shopUrl = '{{ request.origin }}';

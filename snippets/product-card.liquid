@@ -1,85 +1,70 @@
+<marmeto-product-card class="product-card" data-product-handle="{{product.handle}}">
+  <div class="product-card__wrap isolate">
+    {%- liquid
+      assign current_variant = product.selected_or_first_available_variant
+      assign price = current_variant.price
+      assign compare_at_price = current_variant.compare_at_price    
+      assign available = current_variant.available | default: false
+      assign featured_media = product.featured_media
 
-<marmeto-product-card class="product-card">
-    <div class="isolate product-card__wrap">
-      {%- liquid
-        assign current_variant = product.selected_or_first_available_variant
-        assign price = current_variant.price
-        assign compare_at_price = current_variant.compare_at_price    
-        assign available = current_variant.available | default: false
-        assign featured_media = product.featured_media
-  
-        if current_variant.image != nil
-          assign featured_media = current_variant.image
-        endif
-      -%}
-
-
-
-    <a href="{{ product.url }}" class="media media--portrait">
-      {% render 'lazy-image', src: product.featured_media %}
-    </a>
-      
-      <div class="product-card__badges absolute">
-        {%- if product.available == false -%}
-          <span class="badge badge--soldout" aria-hidden="true">
-            Sold Out
-          </span>
-          {%- elsif product.compare_at_price > product.price and product.available -%}
-          <span class="badge badge--onsale" aria-hidden="true">
-            On Sale
-          </span>
-        {%- endif -%}
-      </div>
-    </div>
-    <div class="product-card__info">
-      <a href="{{ product.url }}" class="product-card__title">
-        {{ product.title }}
+      if current_variant.image != nil
+        assign featured_media = current_variant.image
+      endif
+    -%}
+    
+    
+      <a href="{{ product.url }}" 
+         class="media media--portrait"
+         style="padding-bottom: 150%;">
+         {% render 'lazy-image' , src: featured_media %}
       </a>
-  
-      <div class="product-card__prices mt-10">  
-        <span name="variant-price" class="product-card__price{% if compare_at_price > price %} on-sale{% endif %}">
-          {{ price | money_without_trailing_zeros }}
-        </span>            
-        <span class="product-card__compareprice{% unless compare_at_price > price %} hidden{% endunless %}">
-          {{ compare_at_price | money_without_trailing_zeros }}
+    
+    
+    <div class="product-card__badges absolute">
+      {%- if current_variant.available == false -%}
+        <span class="badge badge--soldout" aria-hidden="true">
+          Sold Out
         </span>
-      </div>
-  
-      {% unless product.has_only_default_variant %}
-        <div class="field mt-10">
-          <select name="id" class="product-card__options select__select">
-            {% for variant in product.variants %}
-              <option value="{{ variant.id }}" {% if variant.id == current_variant.id %}selected{% endif %}>{{ variant.title }}</option>
-            {% endfor %}
-          </select>
-        </div> 
-      {% else %}
-        <input type="hidden" name="id" value="{{ current_variant.id }}">
-      {% endunless %}
-        
-
-     <div class="product-card__action mt-10">
-        {% if current_variant.available %}
-          <button type="button" name="add" class="button">Add to Bag</button>
-        {% else %}
-          <button type="button" class="button" disabled>Sold Out</button>
-        {% endif %}
-      </div>
+      {%- elsif current_variant.compare_at_price > current_variant.price and current_variant.available -%}
+        <span class="badge badge--onsale" aria-hidden="true">
+          On Sale
+        </span>
+      {%- endif -%}
     </div>
+  </div>
   
-     <script type="application/json">
-        [
-        {%- for variant in product.variants -%}
-        {%- assign variantJson = variant | json -%}
-        {%- assign getSize = variantJson | size | minus: 1 -%}
-        {%- assign variantJson = variantJson | slice: 0, getSize -%}
-        
-        {{- variantJson -}},
-        "product_id": "{{ product.id }}",
-        "product_handle": "{{ product.handle }}",
-        "metafield": "{{ variant.metafields.custom.variant_info }}"
-        }{% unless forloop.last %},{% endunless %}
-      {%- endfor -%}
-        ]
-     </script>
-  </marmeto-product-card>
+  <div class="product-card__info">
+    <a href="{{ product.url }}" class="product-card__title">
+      {{ product.title }}
+    </a>
+
+    <!-- <div class="product-card__meta {% unless current_variant.metafields.custom.variant_info %}is--hidden{% endunless %}">
+      {{ current_variant.metafields.custom.variant_info }}
+    </div> -->
+    
+    <div class="product-card__prices mt-1 ">  
+      <span class="product-card__price{% if compare_at_price > price %} on-sale{% endif %}">
+        {{ price | money_without_trailing_zeros }}
+      </span>            
+      <span class="product-card__compareprice{% unless compare_at_price > price %} hidden{% endunless %}">
+        {{ compare_at_price | money_without_trailing_zeros }}
+      </span>
+    </div>
+
+    {% unless product.has_only_default_variant %}
+      <div class="field mt-1">
+        <select name="id" class="product-card__options select__select">
+          {% for variant in product.variants %}
+          <option value="{{ variant.id }}" {% if variant.id == current_variant.id %}selected{% endif %}>{{ variant.title }}</option>            {% endfor %}
+        </select>
+      </div> 
+    {% else %}
+      <input type="hidden" name="id" value="{{ current_variant.id }}">
+    {% endunless %}
+
+    <div class="product-card__action mt-1">
+      <button type="button" name="add"  class="button">Add to Bag</button>
+    </div>
+  </div>
+
+</marmeto-product-card>

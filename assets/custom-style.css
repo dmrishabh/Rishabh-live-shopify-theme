@@ -594,3 +594,34 @@ width: 50%;
 
 
 /*! ---------------------NAV css end --------------------------- */
+/* footer */
+.p0{
+  padding: 0;
+  }
+  .p-tb{
+    padding: 10px 0;
+  }
+  .mt-1{
+    margin-top: 1rem;
+  }
+  
+  .mt-10{
+    margin-top: 10px;
+  }
+  
+  .p-tb-20{
+    padding: 20px 0;
+  }
+    .footer__main{
+      padding-top: 20px;
+    }
+    
+    .footer__logo{
+      width: 140px;
+      padding-bottom: 16px;
+      margin-top: 10px;
+    
+    }
+    .grid__item li{
+      padding-left: 40px;
+    }

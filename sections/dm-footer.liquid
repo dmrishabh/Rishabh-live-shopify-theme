@@ -1,0 +1,47 @@
+<footer class="footer__main">
+    <div class="page-width">
+        <div class="grid grid--3-col-desktop grid--1-col grid--2-col-tablet">
+            {% if section.settings.image != nil %}
+                <div class="grid__item ">
+                    <a href="#">
+                    <img class="footer__logo" src="{{ section.settings.image | image_url }}" alt="logo">
+                    </a>
+                </div>
+            {% endif %}
+            {% for linklist in section.settings.menu.links %}
+                <div class= "grid__item">
+                        <ul class="underlined-link">
+                            <h4>{{ linklist.title }}</h4>
+                        </ul>
+                    {% for link in linklist.links %}
+                        <li class="list-unstyled">{{ link.title | link_to: link.url }}</li>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="center p-tb-20">
+           <p> Made With ❤️ In India</p>
+        </div>
+    </div>
+</footer>
+
+
+{% schema %}
+{
+    "name":"footer",
+    "tag": "section",
+    "class":"section",
+    "settings":[
+        {
+            "type":"image_picker",
+            "id":"image",
+            "label":"Logo"
+        },
+        {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Menu"
+        }
+    ]
+}
+{% endschema %}
