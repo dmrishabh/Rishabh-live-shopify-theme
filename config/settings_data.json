@@ -207,6 +207,13 @@
           "logo_position": "left",
           "menu": "main-menu"
         }
+      },
+      "dm-footer": {
+        "type": "dm-footer",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/allbirds-logo.png",
+          "menu": "footer"
+        }
       }
     },
     "content_for_index": [
