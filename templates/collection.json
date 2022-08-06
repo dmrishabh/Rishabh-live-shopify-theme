@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "product-grid": {
+      "type": "marmeto-collection-template",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "product-grid"
+  ]
+}

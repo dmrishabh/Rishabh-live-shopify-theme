@@ -8,18 +8,9 @@
         "show_author": true,
         "show_date": true
       }
-    },
-    "related-blogs": {
-      "type": "dm-related-blogs",
-      "settings": {
-        "section_heading": "Related Blogs",
-        "blog": "news",
-        "article_limit": 3
-      }
     }
   },
   "order": [
-    "main",
-    "related-blogs"
+    "main"
   ]
 }

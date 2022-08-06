@@ -706,7 +706,7 @@ marmeto.Collection = (function() {
     return {
       renderProduct: function (index, product) {
       	var productHtml = '';
-        
+
         var image_space = 100;
         if(product.featured_image) {
           var splitImage = product.featured_image.split(".");          
@@ -716,44 +716,61 @@ marmeto.Collection = (function() {
           image_space = 100;
         }
         
-        productHtml += '<div class="mmc-loop-item" data-index="'+ index +'">';
-        productHtml += '<div class="mmc-product-card">';
-        
-        //Product Badges
+      //  start
+      
+      productHtml += '<div class="grid__item">';
+      productHtml += '<marmeto-product-card class="product-card" data-product-handle="new-mens-tree-flyers">';
+      productHtml += '<div class="product-card__wrap isolate">';
+      productHtml += '<a href="'+ product.url +'" class="media media--portrait">';
+      productHtml += '<img src="'+ product_image +'" alt="'+ product.title +'" />';
+      productHtml += '</a>'
+      if (product.compare_at_price != null) {
+      productHtml += '<div class="product-card__badges absolute">';
+      productHtml += '<span class="badge badge--onsale" aria-hidden="true"> On Sale </span>';
+      productHtml += '</div>'
+      productHtml += '</div>'
+      }
+// card info
+         productHtml += '<div class="product-card__info">';
+   
+         productHtml += '<a href="'+ product.url +'" class="product-card__title">' + product.title +'</a>'
+         productHtml += '<div class="product-card__meta is--hidden">';
+         productHtml += '</div>';
+         productHtml += '<div class="product-card__prices mt-1">';
 
-        if (product.compare_at_price != null) {
-
-        productHtml += '<span class="badge">Sale</span>';        
-
-          
+         if(product.compare_at_price > product.price) {
+          productHtml += '<span class="product-card__price on-sale">'+ _this.helpers().formatMoney(product.price) +'</span>';
+          productHtml += '<span class="product-card__compareprice">'+ _this.helpers().formatMoney(product.compare_at_price) +'</span>';
+        } else {
+          productHtml += '<span class="product-card__price on-sale">'+ _this.helpers().formatMoney(product.price) +'</span>';
         }
-       //Product Image
-       productHtml += '<a href="'+ product.url +'" class="media media--portrait" >';
-       productHtml += '<img src="'+ product_image +'" alt="'+ product.title +'" />';
-       productHtml += '</a>';
-       
-       //Product Info
-       productHtml += '<div class="product-card__info">';        
-       productHtml += '<a href="'+ product.url +'" class="product-card__title">'+ product.title +'</a>';
-       
-       productHtml += '<div class="product-card__prices mt-1">';        
-       
-       if(product.compare_at_price > product.price) {
-         productHtml += '<span class="product-card__price">'+ _this.helpers().formatMoney(product.price) +'</span>';
-         productHtml += '<span class="product-card__compareprice">'+ _this.helpers().formatMoney(product.compare_at_price) +'</span>';
-       } else {
-         productHtml += '<span class="mmc-price-regular">'+ _this.helpers().formatMoney(product.price) +'</span>';
-       }
 
-       productHtml += '</div>';        
-       productHtml += '</div>';
-       
-       productHtml += '</div>';
-       productHtml += '<div class="product-card__action mt-1">';
-       productHtml += '<a href="#" class="button">ADD TO CART</a>';
-       productHtml += '</div>';
-       productHtml += '</div>';
-       
+          productHtml += '</div>';
+
+        // variant
+        productHtml += '<div class="field mt-1">';      
+                  
+        productHtml += '<select name="id" class="product-card__options select__select">';
+        for(var i=0; i<product.variants.length; i++){
+          productHtml += '<option value="'+ product.variants[i].id +'">' + product.variants[i].title + '</option>';
+        }  
+        productHtml += '</select>';
+        productHtml += '</div>';
+
+         
+          // button
+          productHtml += '<div class="product-card__action mt-1">';
+          productHtml += '<button type="button" name="add" class="button">'+ "Add to Bag" +'</button>';
+          productHtml += '</div>';
+          productHtml += '</div>';
+          productHtml += '</marmeto-product-card>';
+          productHtml += '</div>';
+          
+          
+          
+
+
+      // end
        return productHtml;
      }
    }
