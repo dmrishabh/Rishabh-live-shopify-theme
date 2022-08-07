@@ -230,7 +230,10 @@
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
-
+    
+    {%- if settings.cart_type == 'drawer' -%}
+    {%- render 'cart-drawer' -%}
+    {%- endif -%}
     
     {% section 'dm-announcement-bar' %}
     {% section 'dm-header' %}

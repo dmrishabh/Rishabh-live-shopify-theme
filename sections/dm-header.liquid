@@ -1,4 +1,22 @@
+<link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
+
+{%- if settings.cart_type == "drawer" -%}
+  {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
+  {{ 'component-cart.css' | asset_url | stylesheet_tag }}
+  {{ 'component-totals.css' | asset_url | stylesheet_tag }}
+  {{ 'component-price.css' | asset_url | stylesheet_tag }}
+  {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+  {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+<noscript>{{ 'component-menu-drawer.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-cart-notification.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
+
 {% stylesheet %}
+
 .sticky-header.add-shadow{
   -webkit-box-shadow: -3px 4px 11px -7px rgba(64,46,50,1);
   -moz-box-shadow: -3px 4px 11px -7px rgba(64,46,50,1);
@@ -6,7 +24,13 @@
 }
 {% endstylesheet %}
 
-<header class="dm-header">
+<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
+
+{%- if settings.cart_type == "drawer" -%}
+  <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+<header class="dm-header page-width">
   <a type="button" class="dm-header__hamburger " id="js-hambuger">
     {% render 'icon-hamburger'%}
   </a>
@@ -48,14 +72,26 @@
        {% render 'icon-person-m'%}
     </a>
 
-    <a type="button" class="dm-header__action-link" id="cart-button" href="{{ routes.cart_url }}">
-      
-       {% render 'icon-cart-m'%}
-     
+    <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+        {%- render 'icon-cart-m'-%}
+        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+        {%- if cart != empty -%}
+          <div class="cart-count-bubble">
+            {%- if cart.item_count < 100 -%}
+              <span aria-hidden="true">{{ cart.item_count }}</span>
+            {%- endif -%}
+            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+          </div>
+        {%- endif -%}
+      </a>
 
-        </a>
 </div>
 </header>
+
+{%- if settings.cart_type == "notification" -%}
+  {%- render 'cart-notification', color_scheme: section.settings.color_scheme -%}
+{%- endif -%}
+
 <script >
 var cart_button = document.getElementById('cart-button');
 var cart_menu = document.getElementById('container');

@@ -8,9 +8,15 @@
         "show_author": true,
         "show_date": true
       }
+    },
+    "related-blogs": {
+      "type": "dm-related-blogs",
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "related-blogs"
   ]
 }

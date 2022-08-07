@@ -1,25 +1,31 @@
-{% if section.settings.blog != blank %}
+
     <div class="page-width custom-blog-list">
+        {% if section.settings.section_heading %}
+            
         <div class="title-wrapper">
             <h2>{{ section.settings.section_heading }}</h2>
         </div>
+        
+        {% endif %}
+      
 
-      {% unless blog.id == article.id %}
+        <div class="grid grid--3-col-desktop grid--1-col grid--2-col-tablet">
+        {% assign i = 0 %}
+            {% for post in blog.articles %}
 
-       <div class="grid grid--3-col-desktop grid--1-col grid--2-col-tablet">
-            {% for article in blog.articles limit: section.settings.article_limit %}
+            {% unless i>4 or post.id == article.id %}
+            <div class="grid__item custom-card" >
+            {% render 'dm-article-card' , article: post %}
+            </div>
+            {% endunless %}
             
-                <div class="grid__item custom-card" >
-                    {% render 'dm-article-card' , article: article %}
-                </div>
             {% endfor %}
         </div>
-        
-      {% endunless %}
+   
 
        
     </div>
-{% endif %}
+
 
 
 {% schema %}
@@ -32,21 +38,8 @@
             "id":"section_heading",
             "label": "Section Heading",
             "default":"Related Blogs"
-        },
-        {
-            "type":"blog",
-            "id":"blog",
-            "label":"Choose Blog post"
-        },
-        {
-            "type":"range",
-            "id":"article_limit",
-            "label":"Blog post limit",
-            "min": 3,
-            "max": 6,
-            "step": 1,
-            "default": 3
         }
+     
     ],
     "presets":[
         {

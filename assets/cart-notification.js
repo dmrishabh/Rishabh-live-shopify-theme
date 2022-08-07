@@ -39,8 +39,7 @@ class CartNotification extends HTMLElement {
       }));
 
       if (this.header) this.header.reveal();
-      
-      loadAjaxCart(true); // added 
+      this.open();
   }
 
   getSectionsToRender() {
