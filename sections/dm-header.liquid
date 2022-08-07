@@ -31,13 +31,80 @@
   <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
+{%- comment -%}
+<header class="header page-width" role="banner">
 
 
+           <!-- ham btn  -->
+           <div href="#" class="toggle-button">
+    {% render 'icon-hamburger' %}
+           </div>
+  
+           <!-- LOGO PART -->
+           <div class="header__logo logo_alignment--{{ section.settings.logo_position }}">
+            {% if section.settings.logo != nil %}
+     
+            <a href="/" class="header__logo-link">
+             <img class="header__logo-image" loading="lazy" src="{{  section.settings.logo | img_url: 'medium'}}"  alt="logo" width="{{ section.settings.logo_size_range }}px"/>
+           </a>
+             
+            {% endif %}
+           </div>
 
-<header class="dm-header page-width">
-  <a type="button" class="dm-header__hamburger " id="js-hambuger">
+    
+           <!-- Middle PART -->
+           <nav id="myLinks" class="header__navigation" role="navigation">
+             <ul class="header__list">
+               {% for link in linklists['main-menu'].links %}
+               <li class="header__list-item">
+                     <a href="{{ link.url }}" class="nav_link">{{ link.title }}</a>                      
+               </li>
+               {% endfor %}
+             </ul>
+           </nav>
+          
+           <!-- SECONDARY LINK PART -->
+           <div class="header__secondary-link">
+             <div class="header__icon-list">
+              <div class="header_icon header__icon link focus-inset">
+                <a href="{{ routes.search_url }}">
+
+               {% render 'icon-zoom-m' %}
+
+                </a>
+              </div>
+              <div class="header_icon header__icon header__icon--account link focus-inset">
+
+                <a href="{{ routes.account_url }}">
+
+                 {% render 'icon-person-m' %}
+                  </a>
+               </div>
+               <div class="header_icon">
+              
+                {% render 'icon-cart-drawer' %}
+
+             
+
+              
+               </div>
+              
+              
+             </div>
+           </div>
+            
+          
+</header>
+{%- endcomment -%}
+
+
+<header class="dm-header page-width" role="banner">
+
+    <!-- ham part -->
+
+  <div type="button" class="dm-header__hamburger" id="js-hambuger">
     {% render 'icon-hamburger'%}
-  </a>
+  </div>
   <nav class="dm-header__nav">
      <ul>
         {%- for link in section.settings.menu.links -%}
@@ -60,7 +127,7 @@
        {% endfor %}
      </ul>
   </nav>
-  <div class="header_wrapper">
+  <div class="logo_wrapper">
      <a class="dm-header__logo" href="/">
 
     {% render 'lazy-image', src: section.settings.logo  %}
@@ -90,6 +157,8 @@
       </a>
 
 </div>
+
+
 </header>
 
 {%- if settings.cart_type == "notification" -%}
