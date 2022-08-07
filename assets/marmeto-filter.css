@@ -416,13 +416,7 @@
 
   }
 
-  .badge{
-    position: absolute !important;
-    z-index: 1 !important;
-   
-
-
-  }
+  
   /* MOBILE BUTTONS */
   .mmc-buttons {
     position: fixed;

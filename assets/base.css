@@ -2184,11 +2184,12 @@ input[type='checkbox'] {
 }
 
 .announcement-bar__link {
-  display: block;
+  display: flex;
   width: 100%;
   padding: 1rem 2rem;
   text-decoration: none;
-  text-align: center;
+  font-size: 13.5px;
+ justify-content: center;
     color: #ffffff;
 }
 

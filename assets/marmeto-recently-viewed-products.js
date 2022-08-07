@@ -13,7 +13,6 @@ marmeto.RecentlyViewedProducts = (function() {
     if (this.options['productId']) {
       this.saveCurrentProduct();
     }
-    
     this.fetchProducts();
     this.attachEventListeners();
   }

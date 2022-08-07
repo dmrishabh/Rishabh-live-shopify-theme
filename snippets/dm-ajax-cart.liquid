@@ -1,0 +1,43 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/shopify-cartjs/0.4.3/cart.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/shopify-cartjs/0.4.3/rivets-cart.min.js"></script>
+{{ 'cart.css' | asset_url | stylesheet_tag }}
+
+
+<div class="cart-drawer" data-cart-view="data-cart-view">
+    <div class="cartdrawer-head">
+        <h2>Your Cart</h2>
+    </div>
+    <p id="cd-close">&times;</p>
+    <div class="cartdrawer-body">
+
+        <div class="cartdrawer-item" rv-each-item="cart.items">
+            <div class="item-left">
+
+                <img rv-src="item.image | product_image_size '80x80' ">
+
+            </div>
+            <div class="item-right">
+                <span class="title" rv-text="item.title"></span>
+                <p class="update-quantity-drawer">
+                    <a class="updatePlus" href="#" rv-data-cart-update="index | plus 1" rv-data-cart-quantity="item.quantity | minus 1">-</a>
+                    <span rv-text="item.quantity"></span>
+                    <a class="updateMinus" href="#" rv-data-cart-update="index | plus 1" rv-data-cart-quantity="item.quantity | plus 1">+</a>
+                </p>
+            </div>
+            <p class="cd-remove"><a href="#" rv-data-cart-remove="index | plus 1">&times;</a></p>
+            <p class="cd-price"> <span rv-html="item.price | money Currency.currentCurrency"></span></p>
+        </div>
+
+    </div>
+    <div class="cartdrawer-footer">
+
+        <div rv-show="cart.item_count | gt 0">
+            <span>Total Cart Value</span>
+            <p class="totalcartprice" rv-html="cart.total_price | money Currency.currentCurrency"></p>
+
+        </div>
+        <a href="/checkout" class="btn cart-drawer-checkout large-btn">Place Your Order</a>
+        <a href="/" class="cd-close btn coutinuec-shopping large-btn">Continue Shopping</a>
+
+    </div>
+</div>
