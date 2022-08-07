@@ -25,10 +25,14 @@
 {% endstylesheet %}
 
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'header-function.js' | asset_url }}" defer="defer"></script>
 
 {%- if settings.cart_type == "drawer" -%}
   <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
+
+
+
 
 <header class="dm-header page-width">
   <a type="button" class="dm-header__hamburger " id="js-hambuger">
@@ -92,53 +96,7 @@
   {%- render 'cart-notification', color_scheme: section.settings.color_scheme -%}
 {%- endif -%}
 
-<script >
-var cart_button = document.getElementById('cart-button');
-var cart_menu = document.getElementById('container');
-cart_button.addEventListener('click', function() {
-console.log("hello")
-if(cart_menu.style.transform == "translate(0%)" )
-{
-  cart_menu.style.transform= "translate(100%)";
-  cart_menu.style.display="none";
-}
-else
-{
-  cart_menu.style.transform= "translate(0%)";
-  cart_menu.style.display="block";
-}
-});
-let hambuger_button=document.getElementById("js-hambuger");
-hambuger_button.addEventListener('click',function () {
-let menu=document.getElementById("mobilenav");
-console.log("menu");
-if(menu.style.transform == "translate(-100%)" )
-{
-  menu.style.transform= "translate(0%)";
-}
-else
-{
-  menu.style.transform= "translate(-100%)";
-}
-})
 
- // on scroll having a box shadow
-
-
-
- window.addEventListener('scroll',  (e)=> {
-
-const nav = document.getElementsByClassName('sticky-header')[0];
-if (window.pageYOffset>0) {
-
-  nav.classList.add('add-shadow');
-  
-}
-else{
-  nav.classList.remove('add-shadow');
-}
-});
-</script>
 {% schema %}
 {
   "name": "Header",
