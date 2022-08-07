@@ -811,5 +811,9 @@ a.dm-header__logo {
   position: absolute;
     left: 0;
 }
+.footer__logo{
+  max-width: 120px;
+  margin-left: 3.5rem;
+}
 }
 
