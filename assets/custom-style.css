@@ -188,6 +188,10 @@ line-height: 0;
 
 /* image with text overlay start */
 /* CUSTOM IMAGE OVERLAY */
+.image-overlay__wrap{
+  max-height: 470px;
+  overflow: hidden;
+}
 .image-overlay__wrap > img{
 
   width: 100%;
@@ -481,6 +485,10 @@ width: 50%;
   color: #000000;
   font-weight: bold;
 }
+.ml-2{
+  margin-left: -2rem;
+}
+
 .header__icon-list{
   display: flex;
   align-items: center;

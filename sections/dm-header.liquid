@@ -143,7 +143,7 @@
        {% render 'icon-person-m'%}
     </a>
 
-    <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+    <a href="{{ routes.cart_url }}" class="header__icon ml-2 header__icon--cart link focus-inset" id="cart-icon-bubble">
         {%- render 'icon-cart-m'-%}
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}

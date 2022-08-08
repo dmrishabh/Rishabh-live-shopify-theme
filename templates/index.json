@@ -33,8 +33,8 @@
         "f73eff58-364c-4560-8118-473d23821a1f"
       ],
       "settings": {
-        "image_desktop": "shopify:\/\/shop_images\/image_3.png",
-        "image_mobile": "shopify:\/\/shop_images\/image_10.png",
+        "image_desktop": "shopify:\/\/shop_images\/pexels-wallace-chuck-8473581.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/pexels-melvin-buezo-2529158.jpg",
         "notify_check": true,
         "notify_text": "<p><strong>Discover Your Perfect Pair <\/strong>Quiz to find the best pair for you <a href=\"\/collections\/all\" target=\"_blank\" title=\"All products\">Take the Style Quiz<\/a><\/p>",
         "content_alignment": "align-end justify-start",
