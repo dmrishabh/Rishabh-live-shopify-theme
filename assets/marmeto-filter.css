@@ -197,7 +197,7 @@
   }
   .price-field__input {
     min-width: 80px;
-    padding: 10px 15px;
+    padding: 10px 5px;
     border: 1px solid #cccccc;
     max-width: 100%;
     line-height: 1.2;
@@ -236,11 +236,14 @@
     background-repeat: no-repeat;
     background-position: 94% center;
     background-size: 15px;
+    margin-bottom: 10px;
   }
   .mmc-sort-header span {
     font-weight: 600;
   }
   .mmc-sort-list {
+    margin-top: 0;
+    margin-block-start: 0;
     top: 97%;
     left: 0;
     opacity: 0;
@@ -254,6 +257,7 @@
     border: 1px solid #e1e3e4;
     border-top: 0;
   }
+
   .mmc-sort-list li {
     padding: 8px 15px;
     list-style: none;

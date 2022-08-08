@@ -790,8 +790,9 @@ a.dm-header__logo {
 .dm-header__hamburger{
   max-width: 100px;
 }
-a.dm-header__logo {
+.dm-header__logo {
   
+    margin: auto;
   margin-left: 80px;
 }
 .dm-header__nav {
