@@ -411,7 +411,6 @@ width: 50%;
   color: #fff;
   align-items: center;
   justify-content: center;
-  /* margin-top: -10px; */
   background-color: #212a2f;
   padding: 10px 5px;
   display: flex;
@@ -630,6 +629,7 @@ width: 50%;
     padding: 20px 0;
   }
     .footer__main{
+      margin-top: 5rem;
       padding-top: 20px;
       background-color: #212a2f;
      color: #fff;
