@@ -418,6 +418,8 @@ width: 50%;
   color: #fff;
 }
 .notify-bar p{
+  margin-top: 0.5rem;
+
   margin-block-start: 0;
   margin-block-end: 0;
 
