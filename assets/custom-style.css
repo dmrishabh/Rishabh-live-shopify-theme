@@ -415,6 +415,7 @@ width: 50%;
   background-color: #212a2f;
   padding: 10px 5px;
   display: flex;
+  text-align: center;
 }
 
 .notify-bar a{
@@ -777,8 +778,8 @@ a.header_container_navigation_list_link
   justify-content: flex-end;
 }
 @media only screen and (max-width:550px) {
-a.dm-header__logo {
-  margin: 0 !important;
+a.dm-header__logo { 
+  margin-right: 64px;
   width: 70px;
 }
 
