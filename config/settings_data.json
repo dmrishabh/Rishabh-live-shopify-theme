@@ -194,7 +194,7 @@
         "type": "dm-announcement-bar",
         "settings": {
           "announcement_check": true,
-          "announcement_text": "Smallbirds are back! Shop our best-selling kids shoes with even more styles and sizes.",
+          "announcement_text": "Thursday sale is back! Shop our best-selling kids shoes with even more styles and sizes.",
           "announcement_link": "shopify:\/\/collections\/all",
           "announcement_bar_color": "#03203c"
         }
@@ -202,14 +202,14 @@
       "dm-header": {
         "type": "dm-header",
         "settings": {
-          "logo": "shopify:\/\/shop_images\/allbirds-logo.png",
+          "logo": "shopify:\/\/shop_images\/svgviewer-output.png",
           "menu": "main-menu"
         }
       },
       "dm-footer": {
         "type": "dm-footer",
         "settings": {
-          "image": "shopify:\/\/shop_images\/allbirds-logo_1.png",
+          "image": "shopify:\/\/shop_images\/svgviewer-output_1.png",
           "menu": "footer"
         }
       },

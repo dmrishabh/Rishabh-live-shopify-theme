@@ -7,7 +7,9 @@
 
     {% if section.settings.show_banner %}
 
-    {% render 'lazy-image' , src: article.image %}
+    <div class="image_banner">
+    {% render 'lazy-image' , src: article.image , class:"object_fit_height_banner" %}
+    </div>
 
     {% endif %}
     <header {{ block.shopify_attributes }}>
