@@ -409,16 +409,19 @@ width: 50%;
 
 .notify-bar{
   color: #fff;
-  margin-top: -10px;
-
+  align-items: center;
+  justify-content: center;
+  /* margin-top: -10px; */
   background-color: #212a2f;
-  padding: 10px 5px
+  padding: 10px 5px;
+  display: flex;
 }
+
 .notify-bar a{
   color: #fff;
 }
 .notify-bar p{
-  margin-top: 0.5rem;
+  
 
   margin-block-start: 0;
   margin-block-end: 0;
