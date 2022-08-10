@@ -31,73 +31,6 @@
   <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
-{%- comment -%}
-<header class="header page-width" role="banner">
-
-
-           <!-- ham btn  -->
-           <div href="#" class="toggle-button">
-    {% render 'icon-hamburger' %}
-           </div>
-  
-           <!-- LOGO PART -->
-           <div class="header__logo logo_alignment--{{ section.settings.logo_position }}">
-            {% if section.settings.logo != nil %}
-     
-            <a href="/" class="header__logo-link">
-             <img class="header__logo-image" loading="lazy" src="{{  section.settings.logo | img_url: 'medium'}}"  alt="logo" width="{{ section.settings.logo_size_range }}px"/>
-           </a>
-             
-            {% endif %}
-           </div>
-
-    
-           <!-- Middle PART -->
-           <nav id="myLinks" class="header__navigation" role="navigation">
-             <ul class="header__list">
-               {% for link in linklists['main-menu'].links %}
-               <li class="header__list-item">
-                     <a href="{{ link.url }}" class="nav_link">{{ link.title }}</a>                      
-               </li>
-               {% endfor %}
-             </ul>
-           </nav>
-          
-           <!-- SECONDARY LINK PART -->
-           <div class="header__secondary-link">
-             <div class="header__icon-list">
-              <div class="header_icon header__icon link focus-inset">
-                <a href="{{ routes.search_url }}">
-
-               {% render 'icon-zoom-m' %}
-
-                </a>
-              </div>
-              <div class="header_icon header__icon header__icon--account link focus-inset">
-
-                <a href="{{ routes.account_url }}">
-
-                 {% render 'icon-person-m' %}
-                  </a>
-               </div>
-               <div class="header_icon">
-              
-                {% render 'icon-cart-drawer' %}
-
-             
-
-              
-               </div>
-              
-              
-             </div>
-           </div>
-            
-          
-</header>
-{%- endcomment -%}
-
-
 <header class="dm-header page-width" role="banner">
 
     <!-- ham part -->
@@ -189,7 +122,53 @@
       "default": "main-menu",
       "label": "t:sections.header.settings.menu.label"
     }
+  ],
+  "blocks": [
+  {
+  "type": "mega_menu",
+  "name": "Mega Menu",
+  "settings": [
+  {
+  "type": "checkbox",
+  "id": "menu_enable",
+  "label": "Enable Mega Menu",
+  "default": true
+  },
+  {
+  "type": "image_picker",
+  "id": "imagxe",
+  "label": "Image"
+  },
+  {
+  "type": "image_picker",
+  "id": "image",
+  "label": "Image"
+  },
+  {
+  "type": "text",
+  "id": "mega_link",
+  "label": "Select menu",
+  "default": "1"
+  },
+  {
+  "type": "url",
+  "id": "link",
+  "label": "Main Link"
+  },
+  {
+  "type": "text",
+  "id": "title",
+  "label": "Title"
+  },
+  {
+  "type": "text",
+  "id": "subtitle",
+  "label": "Sub title"
+  }
   ]
+  }
+  ]
+
   
 }
 {% endschema %}

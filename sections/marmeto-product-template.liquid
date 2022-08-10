@@ -82,6 +82,10 @@
                   </script>
                 </marmeto-variant-radios>
         	  {%- endunless -%}
+            <!-- rendering picode checker from snippet -->
+            {%- when 'pincode_checker' -%}
+            {% render 'zipcode'  %}
+
         	{%- when 'buy_buttons' -%}
               <div {{ block.shopify_attributes }}>
                 <marmeto-product-form class="product__form">
@@ -188,6 +192,11 @@
 	  {
         "type": "variant_picker",
         "name": "Variant picker",
+        "limit": 1
+      },
+	  {
+        "type": "pincode_checker",
+        "name": "Pincode Validator",
         "limit": 1
       },
 	  {

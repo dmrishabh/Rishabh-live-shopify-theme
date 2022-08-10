@@ -13,6 +13,24 @@
   transition:.3s;
 }
 
+.cartdrawer-bar{
+
+    width: 100%;
+    height: 10px;
+    background: rgb(245,245,245);
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+.bar_filled{
+    background: rgb(90, 136, 222);
+    height: 100%;
+    width: 20%;
+    border-radius: 10px;
+    transition: width .75s ease-in-out 0s;
+    transform: translateZ(0);
+}
+
 .cartdrawer-item {display: flex;vertical-align: top;position: relative;padding-bottom: 10px;padding-top: 10px;border-bottom: 1px solid #ddd;}
 .item-right {
     padding-left: 20px;

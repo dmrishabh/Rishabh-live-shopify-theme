@@ -35,6 +35,11 @@
             "show_dynamic_checkout": true
           }
         },
+        "4b64c906-65c2-4da6-82c3-77f0b3b930f8": {
+          "type": "pincode_checker",
+          "settings": {
+          }
+        },
         "f61775d9-ddca-4e6e-8279-0e2aff2db45b": {
           "type": "description",
           "settings": {
@@ -48,16 +53,16 @@
         "43acfbc7-271a-4228-a3e9-348cb9319580",
         "dbbac446-b2bf-43e6-9c04-2da15e517bdc",
         "1285be85-196b-43f9-b289-30883118f628",
+        "4b64c906-65c2-4da6-82c3-77f0b3b930f8",
         "f61775d9-ddca-4e6e-8279-0e2aff2db45b"
       ],
       "settings": {
       }
     },
-    "product-upsell": {
-      "type": "marmeto-upsell",
+    "recently-viewed-products": {
+      "type": "marmeto-recently-viewed-products",
       "settings": {
-        "enable_product_upselling": true,
-        "title": "Upsell Products"
+        "title": "Recently viewed"
       }
     },
     "product-recommendations": {
@@ -67,10 +72,11 @@
         "title": "You may also like"
       }
     },
-    "recently-viewed-products": {
-      "type": "marmeto-recently-viewed-products",
+    "product-upsell": {
+      "type": "marmeto-upsell",
       "settings": {
-        "title": "Recently viewed"
+        "enable_product_upselling": true,
+        "title": "Upsell Products"
       }
     }
   },

@@ -1,0 +1,13 @@
+
+<script src="{{ 'zipcode.js' | asset_url }}" defer="defer"></script>
+
+<pincode-checker>
+    <div class="pincode-checker">
+      <div class="field pincode-checker__field">
+        <input class="field__input" id="PincodeInput" type="text" name="pincode-input" placeholder="Eg. 560012">
+        <label class="field__label" for="PincodeInput">Enter Pincode</label>
+      </div>
+      <button type="button" class="button pincode-checker__button" name="pincode-submit">Check</button>
+    </div>
+    <div class="pincode-message text-body is-hidden" name="pincode-message"></div>
+</pincode-checker>
