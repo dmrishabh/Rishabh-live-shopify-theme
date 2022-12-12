@@ -4,7 +4,7 @@
 ## password - 129
 
 ----
-##Pincode Component 
+## Pincode Component 
 * Create A Snippet named "zipcode.liquid" and paste the following code
 ```html
 
