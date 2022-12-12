@@ -157,4 +157,5 @@ class PincodeChecker extends HTMLElement {
 ```html
    
             {%- when 'pincode_checker' -%}
+   {% render 'zipcode'  %}
 ```
