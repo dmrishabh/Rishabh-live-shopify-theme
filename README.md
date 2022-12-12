@@ -5,7 +5,7 @@
 
 ----
 ## Pincode Component 
-Link to Sheet [https://docs.google.com/spreadsheets/d/1h0kscMJ6SHc6iScepk-jOZPDvfjhc5ffuxV0Sv75cQ4/edit#gid=0]
+[ Link to Sheet ](https://docs.google.com/spreadsheets/d/1h0kscMJ6SHc6iScepk-jOZPDvfjhc5ffuxV0Sv75cQ4/edit#gid=0)
 * Create A Snippet named "zipcode.liquid" and paste the following code
 ```html
 
